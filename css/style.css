@@ -1,7 +1,9 @@
 :root
 {
   --watchOuterColor:#44446B;
-    --watchInnerColor:#0C1034;
+  --watchInnerColor:#0C1034;
+  --buttonColor:#373762;
+  --watchContentColor:#00FFCC;
 }
 .fullColor
 {
@@ -56,6 +58,9 @@
     height: 300px;
      -webkit-border-radius: 20px / 20px;
     background:var(--watchOuterColor);
+    /*-webkit-box-shadow:0px 20px 20px #44446B;
+ -moz-box-shadow:0px 5px 5px #44446B;
+ box-shadow: 2px 2px #44446B;*/
 }
 .innerSquare {
     position: relative;
@@ -63,7 +68,7 @@
     width: 280px;
     height: 270px;
      -webkit-border-radius: 20px / 20px;
-    background: var(--watchInnerColor);;
+    background: var(--watchInnerColor);
 }
 .sideSmallButton
 {
@@ -107,6 +112,8 @@ left: 62.5%;
   background-color:var(--watchOuterColor);
   border-top-left-radius:20%;
   border-top-right-radius:20%;
+/*  transform: matrix(-1, 0, 0, 1, 0, 0);*/
+
 }
 .bandShapeLower
 {
@@ -117,3 +124,80 @@ left: 62.5%;
   border-bottom-left-radius:20%;
   border-bottom-right-radius:20%; :
 }
+.icolor
+{
+  color: white;
+}
+.buttonComment
+{
+  margin-top: 30px;
+  border-radius: 50px;
+  background-color: var(--buttonColor);
+  border: none;
+}
+.buttonMusic
+{
+    margin-top: 30px;
+    border-radius: 50px;
+    background-color: var(--buttonColor);
+    border: none;
+}
+.buttonStopwatch
+{
+      margin-top: 30px;
+      border-radius: 50px;
+      background-color:var(--buttonColor);
+      border: none;
+}
+.title
+{
+  position: relative;
+  left: -15px;
+  color: var(--watchContentColor);
+}
+.time
+{
+  position: relative;
+  left: 15%;
+  color: var(--watchContentColor);
+}
+.buttonBottom
+{
+  margin-top: 210px;
+  margin-left: 158px;
+  border-radius: 50px;
+  background-color:var(--watchInnerColor);
+  border: none;
+}
+.message
+{
+  position: relative;
+  left: -10%;
+  width: 60%;
+}
+.table-responsive-sm {
+  position: relative;
+  left:0;
+  width: 1000px;
+  max-height:210px;
+  max-width: 260px;
+}
+.name-icon
+{
+
+  background-color: #D2691E;
+  border-radius: 40%;
+  width: 20px;
+  text-align: center;
+}
+/*.msg-name-block
+{
+  position: relative;
+  width: 100%;
+}
+
+.msg-msg-block
+{
+  position: relative;
+  width: 100%;
+}*/
