@@ -38,7 +38,8 @@ Technology Used:HTML,Bootstrap
                 <span class="time">10:40</span>
               </div>
               <div class="col-sm-8">
-                <!--div class="message-list" style="display:block;">
+                              <!--message start-->
+                <div class="message-list" style="display:none;">
                   <div class="table-responsive-md">
                     <table class="table">
                       <thead>
@@ -46,7 +47,7 @@ Technology Used:HTML,Bootstrap
         <th scope="col">#</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
-      </tr>
+      </tr-->
                       </thead>
                       <tbody>
                         <tr>
@@ -80,13 +81,34 @@ Technology Used:HTML,Bootstrap
                       </tbody>
                     </table>
                   </div>
-                </div-->
-                <div class="message-read">
-                  <div class="d-flex justify-content-around msg-name-title">
-                    <p class="msg-icon">D</p>
-                    <p class="msg-name">Debarun</p>
+                </div>
+                <div class="col-md-6 message-read" style="display:none;">
+                  <div class="col-md-6 d-flex justify-content-around msg-name-title">
+                    <p class="col-sm-2 msg-icon">D</p>
+                    <p class="col-md-6 msg-name">Debarun</p>
+                  </div>
+                  <div class="msg-content">
+
                   </div>
                 </div>
+                <!--message end-->
+                <!--stopwatch start-->
+                <div class="col-md-8 stopwatch-dial">
+                    <div class="d-flex justify-content-around sw-dial">
+                          <span class="number">00</span class="number"><span class="number">:</span><span class="number">00</span><span class="number">:</span><span class="number">00</span>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                      <!--button type="button" name="buttonBackWar" style="display:block;" class="backward"><i class="fa fa-chevron-up icolor"></i></button>
+                      <button type="button" name="buttonNext" style="display:block;" class="pause"><i class="fa fa-chevron-right icolor"></i></button>
+                      <button type="button" name="buttonNext" style="display:none;" class="play"><i class="fa fa-chevron-right icolor"></i></button>
+                      <button type="button" name="buttonBack" style="display:block;" class="forward"><i class="fa fa-chevron-left icolor"></i></button-->
+                      <button type="button" name="buttonReset" style="display:block;" class="reset"><i class="fa fa-chevron-up icolor"></i></button>
+                      <button type="button" name="buttonPause" style="display:block;" class="pause"><i class="fa fa-chevron-right icolor"></i></button>
+                      <button type="button" name="buttonPlay" style="display:none;" class="play"><i class="fa fa-chevron-right icolor"></i></button>
+                      <button type="button" name="buttonLap" style="display:block;" class="lap-store"><i class="fa fa-chevron-left icolor"></i></button>
+                    </div>
+                </div>
+                <!--stopwatch start-->
               </div>
               <div class="col-sm-2">
                 <div class="d-flex justify-content-around">
@@ -115,5 +137,4 @@ Technology Used:HTML,Bootstrap
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-
 </html>
