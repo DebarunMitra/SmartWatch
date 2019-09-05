@@ -1,0 +1,119 @@
+:root
+{
+  --watchOuterColor:#44446B;
+    --watchInnerColor:#0C1034;
+}
+.fullColor
+{
+  padding: 0;
+  margin: 0;
+}
+.colorPart
+{
+  background-color: #0080ff;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 40rem;
+}
+.textCenter
+{
+  height: 100vh;
+  width: 90%;
+  align-items: center;
+}
+.weatherClass
+{
+    padding-left: 30%;
+     text-align: left;
+    font-style: normal;
+    font-family: sans-serif;
+    font-size: 300%;
+    color:#FFFFFF;
+}
+.appClass
+{
+  padding-left: 0;
+   text-align: left;
+    font-style: normal;
+    font-family: sans-serif;
+    font-size: 300%;
+    color:#000000;
+}
+.container-fluid #watch{
+   color:white;
+}
+.watchPosition
+{
+  position: relative;
+  top: 0%;
+  left:5%;
+}
+.outerSquare {
+    position: relative;
+    top:30%;
+    width: 200px;
+    height: 300px;
+     -webkit-border-radius: 20px / 20px;
+    background:var(--watchOuterColor);
+}
+.innerSquare {
+    position: relative;
+    top: 5%;
+    width: 280px;
+    height: 270px;
+     -webkit-border-radius: 20px / 20px;
+    background: var(--watchInnerColor);;
+}
+.sideSmallButton
+{
+  position: relative;
+top:68px;
+left: 62.5%;
+  width: 2px;
+  height: 8px;
+   -webkit-border-radius: 20px / 10px;
+  background:var(--watchOuterColor);
+  transform: rotate(90deg);
+}
+.sideLongButton
+{
+  position: relative;
+  left: 50%;
+  top: 180px;
+  width: 10px;
+  height: 8px;
+   -webkit-border-radius: 20px / 10px;
+  background: var(--watchOuterColor);
+  transform: rotate(90deg);
+}
+.upperBand
+{
+  position: relative;
+  top:5%;
+  left:37%;
+}
+.lowerBand
+{
+  position: relative;
+  bottom: 0%;
+  left:37%;
+}
+.bandShapeUpper
+{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color:var(--watchOuterColor);
+  border-top-left-radius:20%;
+  border-top-right-radius:20%;
+}
+.bandShapeLower
+{
+  position: relative;
+  width: 100px;
+  height: 130px;
+  background-color:var(--watchOuterColor);
+  border-bottom-left-radius:20%;
+  border-bottom-right-radius:20%; :
+}
