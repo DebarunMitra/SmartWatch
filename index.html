@@ -4,83 +4,99 @@ Technology Used:HTML,Bootstrap
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
+
 <body>
   <div class="container-fluid fullColor">
     <div class="row">
       <div class="col-sm-6 colorPart">
         <div class="col-sm d-flex justify-content-center textCenter">
-                          <h1>Smart <span id="watch">Watch</span></h1>
-      </div>
+          <h1>Smart <span id="watch">Watch</span></h1>
+        </div>
       </div>
       <div class="col-sm-6 ">
-          <!--div class="col-sm-2 upperBand"></div-->
-          <div class="row col-sm-6 upperBand">
-            <div class="col-sm-6 bandShapeUpper">
+        <!--div class="col-sm-2 upperBand"></div-->
+        <div class="row col-sm-6 upperBand">
+          <div class="col-sm-6 bandShapeUpper">
           </div>
         </div>
-          <div class="row col-sm-12 watchPosition">
-            <div class="col-sm-1 sideSmallButton"></div>
-            <div class="col-sm-2 sideLongButton"></div>
-            <div class="col-sm-5 outerSquare">
-              <div class=" col-sm-12 innerSquare">
-                <div id="contentTitle" class="d-flex justify-content-around">
-                  <span class="title">TITLE</span>
-                  <span class="time">10:40</span>
-                </div>
-                <div class="col-sm-8">
-                    <div class="message" style="display:block;">
-                      <div class="table-responsive-md">
-                          <table class="table">
-                            <thead>
-      <!--tr>
+        <div class="row col-sm-12 watchPosition">
+          <div class="col-sm-1 sideSmallButton"></div>
+          <div class="col-sm-2 sideLongButton"></div>
+          <div class="col-sm-5 outerSquare">
+            <div class=" col-sm-12 innerSquare">
+              <div id="contentTitle" class="d-flex justify-content-around">
+                <span class="title">TITLE</span>
+                <span class="time">10:40</span>
+              </div>
+              <div class="col-sm-8">
+                <!--div class="message-list" style="display:block;">
+                  <div class="table-responsive-md">
+                    <table class="table">
+                      <thead>
+                        <!--tr>
         <th scope="col">#</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
-      </tr-->
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row" ><p class="name-icon">A</p></th>
-        <td>Mark</td>
-        <td>Otto</td>
       </tr>
-      <tr>
-        <th scope="row" ><p class="name-icon">A</p></th>
-        <td>Mark</td>
-        <td>Otto</td>
-      </tr>
-      <tr>
-        <th scope="row" ><p class="name-icon">A</p></th>
-        <td>Mark</td>
-        <td>Otto</td>
-      </tr>
-      <tr>
-        <th scope="row" ><p class="name-icon">A</p></th>
-        <td>Mark</td>
-        <td>Otto</td>
-      </tr>
-    </tbody>
-                          </table>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                  <div class="d-flex justify-content-around">
-                    <button type="button" name="buttonUp" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-up icolor"></i></button>
-                    <button type="button" name="buttonNext" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-right icolor"></i></button>
-                    <button type="button" name="buttonBack" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-left icolor"></i></button>
-                    <button type="button" name="buttonScroll" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-down icolor"></i></button>
-                </div>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            <p class="msg-icon">D</p>
+                          </th>
+                          <td class="msg-name">Debarun</td>
+                          <td class="msg-name"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <p class="name-icon">A</p>
+                          </th>
+                          <td>Mark </td>
+                          <td>Otto</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <p class="name-icon">A</p>
+                          </th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <p class="name-icon">A</p>
+                          </th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div-->
+                <div class="message-read">
+                  <div class="d-flex justify-content-around msg-name-title">
+                    <p class="msg-icon">D</p>
+                    <p class="msg-name">Debarun</p>
+                  </div>
                 </div>
               </div>
+              <div class="col-sm-2">
+                <div class="d-flex justify-content-around">
+                  <button type="button" name="buttonUp" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-up icolor"></i></button>
+                  <button type="button" name="buttonNext" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-right icolor"></i></button>
+                  <button type="button" name="buttonBack" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-left icolor"></i></button>
+                  <button type="button" name="buttonScroll" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-down icolor"></i></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row col-sm-6 lowerBand">
@@ -89,14 +105,15 @@ Technology Used:HTML,Bootstrap
               <button type="button" name="buttonComment" class="buttonComment"><i class="fa fa-comments-o icolor"></i></button>
               <button type="button" name="buttonMusic" class="buttonMusic"><i class="fa fa-music icolor"></i></button>
               <button type="button" name="buttonStopwatch" class="buttonStopwatch"><i class="fa fa-clock-o icolor"></i></button>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
 </html>

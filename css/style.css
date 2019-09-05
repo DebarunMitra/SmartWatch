@@ -169,7 +169,7 @@ left: 62.5%;
   background-color:var(--watchInnerColor);
   border: none;
 }
-.message
+.message-list
 {
   position: relative;
   left: -10%;
@@ -182,19 +182,22 @@ left: 62.5%;
   max-height:210px;
   max-width: 260px;
 }
-.name-icon
+.msg-icon
 {
 
   background-color: #D2691E;
   border-radius: 40%;
   width: 20px;
   text-align: center;
+  margin-top: 5px;
 }
-/*.msg-name-block
+.msg-name
 {
   position: relative;
-  width: 100%;
+  color: white;
+  font-size: 18px;
 }
+/*
 
 .msg-msg-block
 {
