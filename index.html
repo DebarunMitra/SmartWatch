@@ -89,16 +89,37 @@ Objective: Create a smartwatch which able to show time, check message, play musi
                   </div>
                 </div>
                 <!--message end-->
+                <!--music player start-->
+                  <div class="col-md-12 d-flex justify-content-around sw-dial">
+                    <div id="main" class="col-md-2 main-div">
+                        <div id="image" class="col-md-6">
+                            <img class="img-poster" src="media/Poster1.jpg"/>
+                            </div>
+                        <div id="player" class="col-md-6">
+                        <div id="songTitle" class="col-md-3">
+                          <p id="songName" class="song-name">SongName</p>
+                          <p id="singerName" class="singer-name">singerName</p>
+                        </div>
+                        <div id="seekbar" class="sleek-bar">
+                            <div id="fill" class="music-fill"></div>
+                            <div id="handle" class="music-handler"></div>
+                        </div>
+                        <div id="buttonsMusic" class="col-md-3 d-flex justify-content-around sw-dial music-button">
+                          <button type="button" id="musicPrev" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-backward icolor"></i></button>
+                          <button type="button" id="musicPause" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
+                          <button type="button" id="musicPlay" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
+                          <button type="button" id="musicNext" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-forward icolor"></i></button>
+                        </div>
+            </div>
+        </div>
+                  </div>
+                <!--music player end-->
                 <!--stopwatch start-->
                 <div class="col-md-8 stopwatch-dial" style="display:none;">
                     <div class="col-md-12 d-flex justify-content-around sw-dial">
                           <span class="col-md-12 number justify-content-around">00:00:00</span>
                     </div>
-                    <div class="col-md-12 d-flex justify-content-around sw-button-position">
-                      <!--button type="button" name="buttonBackWar" style="display:block;" class="backward"><i class="fa fa-chevron-up icolor"></i></button>
-                      <button type="button" name="buttonNext" style="display:block;" class="pause"><i class="fa fa-chevron-right icolor"></i></button>
-                      <button type="button" name="buttonNext" style="display:none;" class="play"><i class="fa fa-chevron-right icolor"></i></button>
-                      <button type="button" name="buttonBack" style="display:block;" class="forward"><i class="fa fa-chevron-left icolor"></i></button-->
+                    <div id="musicButton" class="col-md-12 d-flex justify-content-around sw-button-position">
                       <button type="button" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-refresh icolor"></i></button>
                       <button type="button" name="buttonPause" style="display:block;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
                       <button type="button" name="buttonPlay" style="display:none;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
@@ -133,9 +154,9 @@ Objective: Create a smartwatch which able to show time, check message, play musi
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="js/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
