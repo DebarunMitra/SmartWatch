@@ -1,3 +1,8 @@
+/*
+Author: Debarun Mitra
+Technology Used:HTML,css,javaScript,Bootstrap,jQuery
+Objective: Create a smartwatch which able to show time, check message, play music and has a stopwatch
+*/
 :root
 {
   --watchOuterColor:#44446B;
@@ -161,9 +166,19 @@ left: 62.5%;
   left: 15%;
   color: var(--watchContentColor);
 }
+.content-body-size
+{
+  display: table;
+ width: 100%;
+}
+.content-body-col
+{
+  display: table-cell;
+ padding: 16px;
+}
 .buttonBottom
 {
-  margin-top: 210px;
+  margin-top: 1px;
   margin-left: 158px;
   border-radius: 50px;
   background-color:var(--watchInnerColor);
@@ -172,15 +187,21 @@ left: 62.5%;
 .message-list
 {
   position: relative;
-  left: -10%;
-  width: 60%;
+  margin-top: -20px;
+  margin-bottom: -22%;
+  left: -70%;
+  width: 10%;
 }
-.table-responsive-sm {
+.table-responsive{
   position: relative;
   left:0;
-  width: 1000px;
-  max-height:210px;
-  max-width: 260px;
+  max-height:180px;
+  max-width: 5000px;
+}
+.responsive-view
+{
+  display: table-cell;
+  padding: 3px;
 }
 .msg-icon
 {
@@ -194,7 +215,7 @@ left: 62.5%;
 {
   position: relative;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
 }
 .msg-content {
@@ -252,10 +273,15 @@ transform: rotate(0deg);
       border-radius: 50%;
       margin-left: 30px;
     }
-/*
-
-.msg-msg-block
-{
-  position: relative;
-  width: 100%;
-}*/
+  .dial-lap
+  {
+    color: white;
+    width: 20px;
+  }
+  .lap-count
+  {
+    margin-top: 20px;
+    margin-left: 50px;
+    text-align: center;
+    font-size: 20px;
+  }

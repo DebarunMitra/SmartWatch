@@ -1,6 +1,7 @@
 <!--
 Author: Debarun Mitra
-Technology Used:HTML,Bootstrap
+Technology Used:HTML,css,javaScript,Bootstrap,jQuery
+Objective: Create a smartwatch which able to show time, check message, play music and has a stopwatch
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -37,47 +38,43 @@ Technology Used:HTML,Bootstrap
                 <span class="title">TITLE</span>
                 <span class="time">10:40</span>
               </div>
-              <div class="col-sm-8">
+              <div class="col-sm-8 d-flex justify-content-around content-body-size">
                               <!--message start-->
-                <div class="message-list" style="display:none;">
+                <div class="content-body-col message-list" style="display:none;">
                   <div class="table-responsive-md">
-                    <table class="table">
+                    <table class="table responsive-view">
                       <thead>
                         <!--tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr-->
                       </thead>
                       <tbody>
                         <tr>
                           <th scope="row">
-                            <p class="msg-icon">D</p>
+                            <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
+                          </th>
+                          <td class="msg-name" style="width:100px;"><span>Debarun</span></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
                           </th>
                           <td class="msg-name">Debarun</td>
-                          <td class="msg-name"></td>
                         </tr>
                         <tr>
                           <th scope="row">
-                            <p class="name-icon">A</p>
+                            <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
                           </th>
-                          <td>Mark </td>
-                          <td>Otto</td>
+                          <td class="msg-name">Debarun</td>
                         </tr>
-                        <tr>
-                          <th scope="row">
-                            <p class="name-icon">A</p>
-                          </th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                        </tr>
-                        <tr>
+                        <!--tr>
                           <th scope="row">
                             <p class="name-icon">A</p>
                           </th>
                           <td>Mark</td>
                           <td>Otto</td>
-                        </tr>
+                        </tr-->
                       </tbody>
                     </table>
                   </div>
@@ -93,7 +90,7 @@ Technology Used:HTML,Bootstrap
                 </div>
                 <!--message end-->
                 <!--stopwatch start-->
-                <div class="col-md-8 stopwatch-dial">
+                <div class="col-md-8 stopwatch-dial" style="display:none;">
                     <div class="col-md-12 d-flex justify-content-around sw-dial">
                           <span class="col-md-12 number justify-content-around">00:00:00</span>
                     </div>
@@ -102,10 +99,13 @@ Technology Used:HTML,Bootstrap
                       <button type="button" name="buttonNext" style="display:block;" class="pause"><i class="fa fa-chevron-right icolor"></i></button>
                       <button type="button" name="buttonNext" style="display:none;" class="play"><i class="fa fa-chevron-right icolor"></i></button>
                       <button type="button" name="buttonBack" style="display:block;" class="forward"><i class="fa fa-chevron-left icolor"></i></button-->
-                      <button type="button" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-chevron-up icolor"></i></button>
-                      <button type="button" name="buttonPause" style="display:block;" class="button-play-pause"><i class="fa fa-chevron-right icolor"></i></button>
-                      <button type="button" name="buttonPlay" style="display:none;" class="button-play-pause"><i class="fa fa-chevron-right icolor"></i></button>
-                      <button type="button" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-chevron-left icolor"></i></button>
+                      <button type="button" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-refresh icolor"></i></button>
+                      <button type="button" name="buttonPause" style="display:block;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
+                      <button type="button" name="buttonPlay" style="display:none;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
+                      <button type="button" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-repeat icolor"></i></button>
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-around dial-lap">
+                                <p class="col-md-6 lap-count">LAP&nbsp;:&nbsp;0</p>
                     </div>
                 </div>
                 <!--stopwatch start-->
@@ -133,6 +133,7 @@ Technology Used:HTML,Bootstrap
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="js/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
