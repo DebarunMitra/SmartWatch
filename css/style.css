@@ -189,7 +189,7 @@ left: 62.5%;
   position: relative;
   margin-top: -20px;
   margin-bottom: -22%;
-  left: -70%;
+  left: 0%;
   width: 10%;
 }
 .table-responsive{
@@ -239,6 +239,10 @@ transform: rotate(0deg);
       border-right: 16px solid white;
       border-bottom: 13px solid transparent;
         transform: rotate(310deg);
+    }
+    .stopwatch-dial
+    {
+      margin-left: -220px;
     }
     .number
     {

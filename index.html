@@ -40,7 +40,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
               </div>
               <div class="col-sm-8 d-flex justify-content-around content-body-size">
                               <!--message start-->
-                <div class="content-body-col message-list" style="display:none;">
+                <div id="msgMainDiv" class="content-body-col message-list" style="display:none;">
                   <div class="table-responsive-md">
                     <table class="table responsive-view">
                       <thead>
@@ -90,20 +90,20 @@ Objective: Create a smartwatch which able to show time, check message, play musi
                 </div>
                 <!--message end-->
                 <!--music player start-->
-                  <div class="col-md-12 d-flex justify-content-around sw-dial">
+                  <div id="musicMainDiv" class="col-md-12 d-flex justify-content-around sw-dial" style="display:none;">
                     <div id="main" class="col-md-2 main-div">
                         <div id="image" class="col-md-6">
-                            <img class="img-poster" src="media/Poster1.jpg"/>
+                            <img id="poster" class="img-poster" src="media/Poster1.jpg"/>
                             </div>
                         <div id="player" class="col-md-6">
                         <div id="songTitle" class="col-md-3">
                           <p id="songName" class="song-name">SongName</p>
                           <p id="singerName" class="singer-name">singerName</p>
                         </div>
-                        <div id="seekbar" class="sleek-bar">
+                        <!--div id="seekbar" class="sleek-bar">
                             <div id="fill" class="music-fill"></div>
                             <div id="handle" class="music-handler"></div>
-                        </div>
+                        </div-->
                         <div id="buttonsMusic" class="col-md-3 d-flex justify-content-around sw-dial music-button">
                           <button type="button" id="musicPrev" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-backward icolor"></i></button>
                           <button type="button" id="musicPause" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
@@ -115,7 +115,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
                   </div>
                 <!--music player end-->
                 <!--stopwatch start-->
-                <div class="col-md-8 stopwatch-dial" style="display:none;">
+                <div id="swMainDiv" class="col-md-8 stopwatch-dial" style="display:none;">
                     <div class="col-md-12 d-flex justify-content-around sw-dial">
                           <span class="col-md-12 number justify-content-around">00:00:00</span>
                     </div>
@@ -145,9 +145,9 @@ Objective: Create a smartwatch which able to show time, check message, play musi
         <div class="row col-sm-6 lowerBand">
           <div class="col-sm-6 bandShapeLower">
             <div class="d-flex justify-content-around">
-              <button type="button" name="buttonComment" class="buttonComment"><i class="fa fa-comments-o icolor"></i></button>
-              <button type="button" name="buttonMusic" class="buttonMusic"><i class="fa fa-music icolor"></i></button>
-              <button type="button" name="buttonStopwatch" class="buttonStopwatch"><i class="fa fa-clock-o icolor"></i></button>
+              <button type="button" id="msgBtn" name="buttonComment" class="buttonComment"><i class="fa fa-comments-o icolor"></i></button>
+              <button type="button" id="musicBtn" name="buttonMusic" class="buttonMusic"><i class="fa fa-music icolor"></i></button>
+              <button type="button" id="swBtn" name="buttonStopwatch" class="buttonStopwatch"><i class="fa fa-clock-o icolor"></i></button>
             </div>
           </div>
         </div>
