@@ -117,8 +117,6 @@ left: 62.5%;
   background-color:var(--watchOuterColor);
   border-top-left-radius:20%;
   border-top-right-radius:20%;
-/*  transform: matrix(-1, 0, 0, 1, 0, 0);*/
-
 }
 .bandShapeLower
 {
@@ -244,11 +242,25 @@ transform: rotate(0deg);
     {
       margin-left: -220px;
     }
-    .number
+    .minutes
     {
-      margin-left: -55px;
+      margin-left: 110px;
       padding-top: 40px;
-      color:white;
+      color:green;
+      font-size:44px;
+    }
+    .seconds
+    {
+      margin-left: 20px;
+      padding-top: 40px;
+      color:blue;
+      font-size:44px;
+    }
+    .centiseconds
+    {
+      margin-left: 20px;
+      padding-top: 40px;
+      color:red;
       font-size:44px;
     }
     .sw-button-position

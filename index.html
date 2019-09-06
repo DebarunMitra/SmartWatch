@@ -23,135 +23,137 @@ Objective: Create a smartwatch which able to show time, check message, play musi
           <h1>Smart <span id="watch">Watch</span></h1>
         </div>
       </div>
-      <div class="col-sm-6 ">
-        <!--div class="col-sm-2 upperBand"></div-->
-        <div class="row col-sm-6 upperBand">
-          <div class="col-sm-6 bandShapeUpper">
-          </div>
+<!--smartwatch start-->
+<div class="col-sm-6 ">
+  <div class="row col-sm-6 upperBand">
+    <div class="col-sm-6 bandShapeUpper">
+    </div>
+  </div>
+  <div class="row col-sm-12 watchPosition">
+    <div class="col-sm-1 sideSmallButton"></div>
+    <div class="col-sm-2 sideLongButton"></div>
+    <div class="col-sm-5 outerSquare">
+      <div class=" col-sm-12 innerSquare">
+        <div id="contentTitle" class="d-flex justify-content-around">
+          <span class="title">TITLE</span>
+          <span class="time">10:40</span>
         </div>
-        <div class="row col-sm-12 watchPosition">
-          <div class="col-sm-1 sideSmallButton"></div>
-          <div class="col-sm-2 sideLongButton"></div>
-          <div class="col-sm-5 outerSquare">
-            <div class=" col-sm-12 innerSquare">
-              <div id="contentTitle" class="d-flex justify-content-around">
-                <span class="title">TITLE</span>
-                <span class="time">10:40</span>
-              </div>
-              <div class="col-sm-8 d-flex justify-content-around content-body-size">
-                              <!--message start-->
-                <div id="msgMainDiv" class="content-body-col message-list" style="display:none;">
-                  <div class="table-responsive-md">
-                    <table class="table responsive-view">
-                      <thead>
-                        <!--tr>
-        <th scope="col"></th>
-        <th scope="col"></th>
-      </tr-->
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">
-                            <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
-                          </th>
-                          <td class="msg-name" style="width:100px;"><span>Debarun</span></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">
-                            <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
-                          </th>
-                          <td class="msg-name">Debarun</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">
-                            <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
-                          </th>
-                          <td class="msg-name">Debarun</td>
-                        </tr>
-                        <!--tr>
-                          <th scope="row">
-                            <p class="name-icon">A</p>
-                          </th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                        </tr-->
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="col-md-6 message-read" style="display:none;">
-                  <div class="col-md-6 d-flex justify-content-around msg-name-title">
-                    <p class="col-sm-2 msg-icon">D</p>
-                    <p class="col-md-6 msg-name">Debarun</p>
-                  </div>
-                  <div class="msg-content">
+        <div class="col-sm-8 d-flex justify-content-around content-body-size">
+                        <!--message start-->
+          <div id="msgMainDiv" class="content-body-col message-list" style="display:none;">
+            <div class="table-responsive-md">
+              <table class="table responsive-view">
+                <thead>
+                  <!--tr>
+  <th scope="col"></th>
+  <th scope="col"></th>
+</tr-->
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
+                    </th>
+                    <td class="msg-name" style="width:100px;"><span>Debarun</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
+                    </th>
+                    <td class="msg-name">Debarun</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
+                    </th>
+                    <td class="msg-name">Debarun</td>
+                  </tr>
+                  <!--tr>
+                    <th scope="row">
+                      <p class="name-icon">A</p>
+                    </th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr-->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-6 message-read" style="display:none;">
+            <div class="col-md-6 d-flex justify-content-around msg-name-title">
+              <p class="col-sm-2 msg-icon">D</p>
+              <p class="col-md-6 msg-name">Debarun</p>
+            </div>
+            <div class="msg-content">
 
-                  </div>
-                </div>
-                <!--message end-->
-                <!--music player start-->
-                  <div id="musicMainDiv" class="col-md-12 d-flex justify-content-around sw-dial" style="display:none;">
-                    <div id="main" class="col-md-2 main-div">
-                        <div id="image" class="col-md-6">
-                            <img id="poster" class="img-poster" src="media/Poster1.jpg"/>
-                            </div>
-                        <div id="player" class="col-md-6">
-                        <div id="songTitle" class="col-md-3">
-                          <p id="songName" class="song-name">SongName</p>
-                          <p id="singerName" class="singer-name">singerName</p>
-                        </div>
-                        <!--div id="seekbar" class="sleek-bar">
-                            <div id="fill" class="music-fill"></div>
-                            <div id="handle" class="music-handler"></div>
-                        </div-->
-                        <div id="buttonsMusic" class="col-md-3 d-flex justify-content-around sw-dial music-button">
-                          <button type="button" id="musicPrev" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-backward icolor"></i></button>
-                          <button type="button" id="musicPause" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
-                          <button type="button" id="musicPlay" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
-                          <button type="button" id="musicNext" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-forward icolor"></i></button>
-                        </div>
-            </div>
-        </div>
-                  </div>
-                <!--music player end-->
-                <!--stopwatch start-->
-                <div id="swMainDiv" class="col-md-8 stopwatch-dial" style="display:none;">
-                    <div class="col-md-12 d-flex justify-content-around sw-dial">
-                          <span class="col-md-12 number justify-content-around">00:00:00</span>
-                    </div>
-                    <div id="musicButton" class="col-md-12 d-flex justify-content-around sw-button-position">
-                      <button type="button" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-refresh icolor"></i></button>
-                      <button type="button" name="buttonPause" style="display:block;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
-                      <button type="button" name="buttonPlay" style="display:none;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
-                      <button type="button" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-repeat icolor"></i></button>
-                    </div>
-                    <div class="col-md-12 d-flex justify-content-around dial-lap">
-                                <p class="col-md-6 lap-count">LAP&nbsp;:&nbsp;0</p>
-                    </div>
-                </div>
-                <!--stopwatch start-->
-              </div>
-              <div class="col-sm-2">
-                <div class="d-flex justify-content-around">
-                  <button type="button" name="buttonUp" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-up icolor"></i></button>
-                  <button type="button" name="buttonNext" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-right icolor"></i></button>
-                  <button type="button" name="buttonBack" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-left icolor"></i></button>
-                  <button type="button" name="buttonScroll" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-down icolor"></i></button>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
-        <div class="row col-sm-6 lowerBand">
-          <div class="col-sm-6 bandShapeLower">
-            <div class="d-flex justify-content-around">
-              <button type="button" id="msgBtn" name="buttonComment" class="buttonComment"><i class="fa fa-comments-o icolor"></i></button>
-              <button type="button" id="musicBtn" name="buttonMusic" class="buttonMusic"><i class="fa fa-music icolor"></i></button>
-              <button type="button" id="swBtn" name="buttonStopwatch" class="buttonStopwatch"><i class="fa fa-clock-o icolor"></i></button>
+          <!--message end-->
+          <!--music player start-->
+            <div id="musicMainDiv" class="col-md-12 d-flex justify-content-around sw-dial" style="display:none;">
+              <div id="main" class="col-md-2 main-div" style="display:none;">
+                  <div id="image" class="col-md-6" style="display:none;">
+                      <img id="poster" class="img-poster" src="media/Poster1.jpg" style="display:none;"/>
+                      </div>
+                  <div id="player" class="col-md-6" style="display:none;">
+                  <div id="songTitle" class="col-md-3" style="display:none;">
+                    <p id="songName" class="song-name" style="display:none;">SongName</p>
+                    <p id="singerName" class="singer-name" style="display:none;">singerName</p>
+                  </div>
+                  <!--div id="seekbar" class="sleek-bar">
+                      <div id="fill" class="music-fill"></div>
+                      <div id="handle" class="music-handler"></div>
+                  </div-->
+                  <div id="buttonsMusic" class="col-md-3 d-flex justify-content-around sw-dial music-button">
+                    <button type="button" id="musicPrev" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-backward icolor"></i></button>
+                    <button type="button" id="musicPause" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
+                    <button type="button" id="musicPlay" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
+                    <button type="button" id="musicNext" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-forward icolor"></i></button>
+                  </div>
+      </div>
+  </div>
             </div>
+          <!--music player end-->
+          <!--stopwatch start-->
+          <div id="swMainDiv" class="col-sm-8 stopwatch-dial" style="display:block;">
+              <div class="col-sm-12 d-flex justify-content-around sw-dial">
+                    <!--span class="col-md-12 number justify-content-around">00:00:00</span-->
+                    <p id="min" class="minutes">00</p><i>:</i><p id="sec" class="seconds">00</p><i>:</i><p id="cent" class="centiseconds">00</p>
+              </div>
+              <div id="swButton" class="col-sm-12 d-flex justify-content-around sw-button-position">
+                <button type="button" id="reset" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-refresh icolor"></i></button>
+                <button type="button" id="stop" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
+                <button type="button" id="start" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
+                <button type="button" id="lap" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-repeat icolor"></i></button>
+              </div>
+              <div class="col-sm-12 d-flex justify-content-around dial-lap">
+                          <p class="col-sm-6 lap-count">LAP&nbsp;:&nbsp;0</p>
+              </div>
+          </div>
+          <!--stopwatch stop-->
+        </div>
+        <div class="col-sm-2">
+          <div class="d-flex justify-content-around">
+            <button type="button" name="buttonUp" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-up icolor"></i></button>
+            <button type="button" name="buttonNext" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-right icolor"></i></button>
+            <button type="button" name="buttonBack" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-left icolor"></i></button>
+            <button type="button" name="buttonScroll" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-down icolor"></i></button>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row col-sm-6 lowerBand">
+    <div class="col-sm-6 bandShapeLower">
+      <div class="d-flex justify-content-around">
+        <button type="button" id="msgBtn" name="buttonComment" class="buttonComment"><i class="fa fa-comments-o icolor"></i></button>
+        <button type="button" id="musicBtn" name="buttonMusic" class="buttonMusic"><i class="fa fa-music icolor"></i></button>
+        <button type="button" id="swBtn" name="buttonStopwatch" class="buttonStopwatch"><i class="fa fa-clock-o icolor"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--smartwatch end-->
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
