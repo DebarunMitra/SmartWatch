@@ -5,7 +5,6 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -34,51 +33,47 @@ Objective: Create a smartwatch which able to show time, check message, play musi
     <div class="col-sm-5 outer-square">
       <div class=" col-sm-12 inner-square">
         <div id="content-title" class="d-flex justify-content-around">
-          <span class="title">TITLE</span>
-          <span class="time">10:40</span>
+          <p class="title"></p>
+          <p class="time"></p>
         </div>
         <div class="col-sm-8 d-flex justify-content-around content-body-size">
-                        <!--message start-->
+        <!--message start-->
           <div id="msgMainDiv" class="content-body-col message-list" style="display:none;">
             <div class="table-responsive-md">
               <table class="table responsive-view">
                 <thead>
-                  <!--tr>
-  <th scope="col"></th>
-  <th scope="col"></th>
-</tr-->
                 </thead>
                 <tbody id="msgRow">
                 </tbody>
               </table>
             </div>
           </div>
-          <div id="msg-read" class="col-md-6 message-read" style="display:block;">
+          <div id="msgRead" class="col-md-6 message-read" style="display:none;">
             <div class="col-md-6 d-flex justify-content-around msg-name-title">
-              <p id="msgicon" class="col-sm-2 msg-icon">D</p>
-              <p id="mname" class="col-md-6 msg-name">Debarun</p>
+              <p id="msgIcon" class="col-sm-2 msg-icon">D</p>
+              <p id="msgName" class="col-md-6 msg-name">Debarun</p>
             </div>
             <div class="msg-content">
-<p id="msgContent">aaaaaaaaaabbbbbbbbbbbbbbbbbbbbb</p>
+              <p id="msgContent">Hi Debarun, Good morning</p>
             </div>
           </div>
           <!--message end-->
           <!--music player start-->
-            <div id="musicMainDiv" class="col-md-12 d-flex justify-content-around sw-dial" style="display:none;">
-              <div id="main" class="col-md-2 main-div" style="display:none;">
+            <div id="musicMainDiv" class="col-md-12 d-flex justify-content-around sw-dial" style="display:block;">
+              <div id="main" class="col-md-2 main-div" style="display:block;">
                   <div id="image" class="col-md-6" style="display:none;">
-                      <img id="poster" class="img-poster" src="media/Poster1.jpg" style="display:none;"/>
+                      <img id="poster" class="img-poster" src="media/Poster1.jpg" style="display:block;"/>
                       </div>
                   <div id="player" class="col-md-6" style="display:none;">
-                  <div id="songTitle" class="col-md-3" style="display:none;">
-                    <p id="songName" class="song-name" style="display:none;">SongName</p>
-                    <p id="singerName" class="singer-name" style="display:none;">singerName</p>
+                  <div id="songTitle" class="col-md-3" style="display:block;">
+                    <p id="songName" class="song-name" style="display:block;">SongName</p>
+                    <p id="singerName" class="singer-name" style="display:block;">singerName</p>
                   </div>
-                  <div id="seekbar" class="sleek-bar" style="display:none;">
+                  <div id="seekbar" class="sleek-bar" style="display:block;">
                       <div id="fill" class="music-fill"></div>
                       <div id="handle" class="music-handler"></div>
                   </div>
-                  <div id="buttonsMusic" class="col-md-3 d-flex justify-content-around sw-dial music-button" style="display:none;">
+                  <div id="buttonsMusic" class="col-md-3 d-flex justify-content-around sw-dial music-button" style="display:block;">
                     <button type="button" id="musicPrev" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-backward icolor"></i></button>
                     <button type="button" id="musicPause" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
                     <button type="button" id="musicPlay" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
@@ -101,7 +96,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
                 <button type="button" id="lap" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-repeat icolor"></i></button>
               </div>
               <div class="col-sm-12 d-flex justify-content-around dial-lap">
-                          <p class="col-sm-6 lap-count">LAP&nbsp;:&nbsp;0</p>
+                          <p id="lapCount" class="col-sm-6 lap-count">LAP&nbsp;:&nbsp;0</p>
               </div>
           </div>
           <!--stopwatch stop-->
