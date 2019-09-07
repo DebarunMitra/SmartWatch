@@ -49,7 +49,7 @@ function getDayTime()
   let day=date.getDay();
   let ampm,h1,time,p;
   const days = new Array('SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THRUSDAY', 'FRIDAY', 'SATURDAY');
-  (h>=12)?ampm='AM':ampm='PM';
+  (h>=12)?ampm='PM':ampm='AM';
   (min<10)?min="0"+min:min=min;
   h=h%12;h1=h;
   if(h==0){h=12;p=0;}
