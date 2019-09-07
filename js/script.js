@@ -24,10 +24,12 @@ let start=document.getElementById("start");
 let stop=document.getElementById("stop");
 let reset=document.getElementById("reset");
 let lap=document.getElementById("lap"),
-currentTimer = 0, interval = 0, lastUpdateTime = new Date().getTime(),count=0,
+currentTimer = 0, interval = 0,count=0,timeHour,weekDay,
 ele = document.querySelector('.msg-content');
 ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>')
+let date=new Date();
 let song=new Audio();
+let lastUpdateTime = new Date().getTime();
 let currentSong=1;
 function msgBox(v){
 let msgFilter=message.filter((item) => item.id===v).map((v,k)=>v).forEach((v,k)=>
@@ -39,6 +41,24 @@ document.getElementById("msgIcon").backgroundColor=v.color;
 document.getElemetById("msgContent").innerHTML=v.msg;
 }
 );
+}
+function getDayTime()
+{
+  let h=date.getHours();
+  let min=date.getMinutes();
+  let day=date.getDay();
+  let ampm,h1,time,p;
+  const days = new Array('SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THRUSDAY', 'FRIDAY', 'SATURDAY');
+  (h>=12)?ampm='AM':ampm='PM';
+  (min<10)?min="0"+min:min=min;
+  h=h%12;h1=h;
+  if(h==0){h=12;p=0;}
+  else if(h<10){h=h;p=h;}
+  (h1<10)?h1="0"+h1:h1=h1;
+  time=h1+":"+min+" "+ampm;
+  timeHour=time;weekDay=days[day];
+  console.log(time);
+  //return time;
 }
 function playSong(){
     song.src=songs[currentSong].song;
@@ -78,8 +98,11 @@ function pad (n) {
     }
 /*stopwatch stop*/
 $(document).ready(function(){
-          $("#content-title > .title").html();
-          $("#content-title > .time").html();
+  getDayTime();
+  $("#startTime").html(timeHour);
+  $("#weekDay").html(weekDay);
+  $("#content-title > .title").html();
+  $("#content-title > .time").html();
   $("#start").click(function(){
     $("#start").css("display","none");
     $("#stop").css("display","block");
@@ -103,8 +126,11 @@ $(document).ready(function(){
   });
         /*message start*/
   $("#msgBtn").click(function(){
+        $("#startTime").css("display","none");
+        $("#weekDay").css("display","none");
         $("#msgRow").empty();
         $("#content-title > .title").html("MESSAGE");
+        $("#content-title > .time").html(timeHour);
         $("#musicBtn").css("background-color","#373762");
         $("#msgBtn").css("background-color","#00FFCC");
         $("#swBtn").css("background-color","#373762");
@@ -131,7 +157,10 @@ $(document).ready(function(){
       /*message stop*/
     /*music player start*/
 $("#musicBtn").click(function(){
+  $("#startTime").css("display","none");
+  $("#weekDay").css("display","none");
   $("#content-title > .title").html("MUSIC");
+  $("#content-title > .time").html(timeHour);
   $("#musicBtn").css("background-color","#00FFCC");
     $("#msgBtn").css("background-color","#373762");
       $("#swBtn").css("background-color","#373762");
@@ -185,7 +214,10 @@ playSong();
   /*music player end*/
   /*stopwatch start*/
 $("#swBtn").click(function(){
+  $("#startTime").css("display","none");
+  $("#weekDay").css("display","none");
 $("#content-title > .title").html("TIMER");
+$("#content-title > .time").html(timeHour);
 $("#musicBtn").css("background-color","#373762");
 $("#msgBtn").css("background-color","#373762");
 $("#swBtn").css("background-color","#00FFCC");

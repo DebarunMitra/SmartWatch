@@ -151,6 +151,18 @@ left: 62.5%;
       background-color:var(--buttonColor);
       border: none;
 }
+.start-time
+{
+  color: var(--watchContentColor);
+  margin-left: 20px;
+  padding-top: 40px;
+  font-size: 25px;
+}
+.week-day
+{
+    color: var(--watchContentColor);
+  margin-left: 35px;
+}
 .title
 {
   position: relative;
@@ -160,7 +172,7 @@ left: 62.5%;
 .time
 {
   position: relative;
-  left: 15%;
+  left: 10%;
   color: var(--watchContentColor);
 }
 .content-body-size
