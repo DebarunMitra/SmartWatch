@@ -1,6 +1,6 @@
 /*
 Author: Debarun Mitra
-Technology Used:HTML,css,javaScript,Bootstrap,jQuery
+Technology Used:HTML,CSS,javaScript,Bootstrap,jQuery
 Objective: Create a smartwatch which able to show time, check message, play music and has a stopwatch
 */
 /*music player content start*/
@@ -56,7 +56,7 @@ let lap = document.getElementById("lap"),
   currentTimer = 0,
   interval = 0,
   count = 0,
-  timeHour, weekDay,minCount=0,initSec=0;initMin=0,initCents=0,
+  timeHour, weekDay,minCount=0,initSec=0;initMin=0,initCents=0,lpCount=1,
   ele = document.querySelector('.msg-content');
 ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>')
 let date = new Date();
@@ -143,8 +143,9 @@ function timerLap()
   let s=time.getSeconds();
   let c=Math.floor(time.getMilliseconds() / 10);
   let op=`${pad(s-initSec)} : ${pad(c-initCents)}`;
-  lapData.push({id:count,clicksec:s,clickcents:c,lapsec:pad(s-initSec),lapcent:pad(c-initCents)});
+  lapData.push({id:lpCount,clicksec:s,clickcents:c,lapsec:pad(s-initSec),lapcent:pad(c-initCents)});
   initSec=s;initCents=c;
+  lpCount=lpCount+1;
 }
 /*stopwatch stop*/
 $(document).ready(function() {
