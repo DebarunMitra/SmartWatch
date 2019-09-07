@@ -10,26 +10,28 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   --buttonColor:#373762;
   --watchContentColor:#00FFCC;
 }
-.fullColor
+.fixed-width-height{
+  width: 90%;
+  height: 100%;
+}
+.full-color
 {
   padding: 0;
   margin: 0;
 }
-.colorPart
+.color-part
 {
   background-color: #0080ff;
-  margin: 0;
-  padding: 0;
-  width: 50%;
-  height: 40rem;
+  width: 200px;
+  height: 660px;
 }
-.textCenter
+.text-center
 {
   height: 100vh;
   width: 90%;
   align-items: center;
 }
-.weatherClass
+.smart-class
 {
     padding-left: 30%;
      text-align: left;
@@ -38,7 +40,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
     font-size: 300%;
     color:#FFFFFF;
 }
-.appClass
+.watch-class
 {
   padding-left: 0;
    text-align: left;
@@ -50,24 +52,21 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 .container-fluid #watch{
    color:white;
 }
-.watchPosition
+.watch-position
 {
   position: relative;
   top: 0%;
   left:5%;
 }
-.outerSquare {
+.outer-square {
     position: relative;
-    top:30%;
+    top:20%;
     width: 200px;
     height: 300px;
-     -webkit-border-radius: 20px / 20px;
+    -webkit-border-radius: 20px / 20px;
     background:var(--watchOuterColor);
-    /*-webkit-box-shadow:0px 20px 20px #44446B;
- -moz-box-shadow:0px 5px 5px #44446B;
- box-shadow: 2px 2px #44446B;*/
 }
-.innerSquare {
+.inner-square {
     position: relative;
     top: 5%;
     width: 280px;
@@ -75,7 +74,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
      -webkit-border-radius: 20px / 20px;
     background: var(--watchInnerColor);
 }
-.sideSmallButton
+.side-small-button
 {
   position: relative;
 top:68px;
@@ -86,7 +85,7 @@ left: 62.5%;
   background:var(--watchOuterColor);
   transform: rotate(90deg);
 }
-.sideLongButton
+.side-long-button
 {
   position: relative;
   left: 50%;
@@ -97,19 +96,19 @@ left: 62.5%;
   background: var(--watchOuterColor);
   transform: rotate(90deg);
 }
-.upperBand
+.upper-band
 {
   position: relative;
-  top:5%;
+  top:8%;
   left:37%;
 }
-.lowerBand
+.lower-band
 {
   position: relative;
-  bottom: 0%;
+  bottom: 2%;
   left:37%;
 }
-.bandShapeUpper
+.band-shape-upper
 {
   position: relative;
   width: 150px;
@@ -118,11 +117,11 @@ left: 62.5%;
   border-top-left-radius:20%;
   border-top-right-radius:20%;
 }
-.bandShapeLower
+.band-shape-lower
 {
   position: relative;
-  width: 100px;
-  height: 130px;
+  width: 50px;
+  height: 120px;
   background-color:var(--watchOuterColor);
   border-bottom-left-radius:20%;
   border-bottom-right-radius:20%; :
@@ -176,7 +175,7 @@ left: 62.5%;
 }
 .buttonBottom
 {
-  margin-top: 1px;
+  margin-top: -3px;
   margin-left: 158px;
   border-radius: 50px;
   background-color:var(--watchInnerColor);
@@ -206,21 +205,28 @@ left: 62.5%;
 
   background-color: #D2691E;
   border-radius: 50%;
-  text-align:60px;
+  font-weight: bold;
   margin-top: 8px;
+  margin-left: 20px;
+}
+.msg-list-name{
+  color: white;
+  margin-top:20%;
+  cursor:pointer;
 }
 .msg-name
 {
   position: relative;
   color: white;
+  margin-top: 8px;
   font-size: 16px;
   text-align: center;
 }
 .msg-content {
-    width: 180px;
-      height: 180px;
+    width: 150px;
+      height: 150px;
     background: white;
-    margin-left: 10px;
+    margin-left: -10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;

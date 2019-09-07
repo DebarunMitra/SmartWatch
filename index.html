@@ -14,27 +14,26 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-
-<body>
-  <div class="container-fluid fullColor">
+<body class="fixed-width-height">
+  <div class="container-fluid full-color">
     <div class="row">
-      <div class="col-sm-6 colorPart">
-        <div class="col-sm d-flex justify-content-center textCenter">
+      <div class="col-sm-6 color-part">
+        <div class="col-sm d-flex justify-content-center text-center">
           <h1>Smart <span id="watch">Watch</span></h1>
         </div>
       </div>
 <!--smartwatch start-->
-<div class="col-sm-6 ">
-  <div class="row col-sm-6 upperBand">
-    <div class="col-sm-6 bandShapeUpper">
+<div class="col-sm-6 mh-100 mw-100 ">
+  <div class="row col-sm-6 upper-band">
+    <div class="col-sm-6 band-shape-upper">
     </div>
   </div>
-  <div class="row col-sm-12 watchPosition">
-    <div class="col-sm-1 sideSmallButton"></div>
-    <div class="col-sm-2 sideLongButton"></div>
-    <div class="col-sm-5 outerSquare">
-      <div class=" col-sm-12 innerSquare">
-        <div id="contentTitle" class="d-flex justify-content-around">
+  <div class="row col-sm-12 watch-position">
+    <div class="col-sm-1 side-small-button"></div>
+    <div class="col-sm-2 side-long-button"></div>
+    <div class="col-sm-5 outer-square">
+      <div class=" col-sm-12 inner-square">
+        <div id="content-title" class="d-flex justify-content-around">
           <span class="title">TITLE</span>
           <span class="time">10:40</span>
         </div>
@@ -49,43 +48,18 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   <th scope="col"></th>
 </tr-->
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
-                    </th>
-                    <td class="msg-name" style="width:100px;"><span>Debarun</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
-                    </th>
-                    <td class="msg-name">Debarun</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <p class="msg-icon" style="width:30px;"><span style="margin-left:30%;">D</span></p>
-                    </th>
-                    <td class="msg-name">Debarun</td>
-                  </tr>
-                  <!--tr>
-                    <th scope="row">
-                      <p class="name-icon">A</p>
-                    </th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                  </tr-->
+                <tbody id="msgRow">
                 </tbody>
               </table>
             </div>
           </div>
-          <div class="col-md-6 message-read" style="display:none;">
+          <div id="msg-read" class="col-md-6 message-read" style="display:block;">
             <div class="col-md-6 d-flex justify-content-around msg-name-title">
-              <p class="col-sm-2 msg-icon">D</p>
-              <p class="col-md-6 msg-name">Debarun</p>
+              <p id="msgicon" class="col-sm-2 msg-icon">D</p>
+              <p id="mname" class="col-md-6 msg-name">Debarun</p>
             </div>
             <div class="msg-content">
-
+<p id="msgContent">aaaaaaaaaabbbbbbbbbbbbbbbbbbbbb</p>
             </div>
           </div>
           <!--message end-->
@@ -100,22 +74,22 @@ Objective: Create a smartwatch which able to show time, check message, play musi
                     <p id="songName" class="song-name" style="display:none;">SongName</p>
                     <p id="singerName" class="singer-name" style="display:none;">singerName</p>
                   </div>
-                  <!--div id="seekbar" class="sleek-bar">
+                  <div id="seekbar" class="sleek-bar" style="display:none;">
                       <div id="fill" class="music-fill"></div>
                       <div id="handle" class="music-handler"></div>
-                  </div-->
-                  <div id="buttonsMusic" class="col-md-3 d-flex justify-content-around sw-dial music-button">
+                  </div>
+                  <div id="buttonsMusic" class="col-md-3 d-flex justify-content-around sw-dial music-button" style="display:none;">
                     <button type="button" id="musicPrev" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-backward icolor"></i></button>
                     <button type="button" id="musicPause" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
                     <button type="button" id="musicPlay" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
                     <button type="button" id="musicNext" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-forward icolor"></i></button>
                   </div>
-      </div>
-  </div>
+                </div>
+                </div>
             </div>
           <!--music player end-->
           <!--stopwatch start-->
-          <div id="swMainDiv" class="col-sm-8 stopwatch-dial" style="display:block;">
+          <div id="swMainDiv" class="col-sm-8 stopwatch-dial" style="display:none;">
               <div class="col-sm-12 d-flex justify-content-around sw-dial">
                     <!--span class="col-md-12 number justify-content-around">00:00:00</span-->
                     <p id="min" class="minutes">00</p><i>:</i><p id="sec" class="seconds">00</p><i>:</i><p id="cent" class="centiseconds">00</p>
@@ -134,17 +108,17 @@ Objective: Create a smartwatch which able to show time, check message, play musi
         </div>
         <div class="col-sm-2">
           <div class="d-flex justify-content-around">
-            <button type="button" name="buttonUp" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-up icolor"></i></button>
-            <button type="button" name="buttonNext" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-right icolor"></i></button>
+            <button type="button"  name="buttonUp" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-up icolor"></i></button>
+            <button type="button" id="bottomBtnNext" name="buttonNext" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-right icolor"></i></button>
             <button type="button" name="buttonBack" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-left icolor"></i></button>
-            <button type="button" name="buttonScroll" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-down icolor"></i></button>
+            <button type="button" id="bottomBtnScroll" name="buttonScroll" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-down icolor"></i></button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row col-sm-6 lowerBand">
-    <div class="col-sm-6 bandShapeLower">
+  <div class="row col-sm-6 lower-band">
+    <div class="col-sm-6 band-shape-lower">
       <div class="d-flex justify-content-around">
         <button type="button" id="msgBtn" name="buttonComment" class="buttonComment"><i class="fa fa-comments-o icolor"></i></button>
         <button type="button" id="musicBtn" name="buttonMusic" class="buttonMusic"><i class="fa fa-music icolor"></i></button>
