@@ -35,7 +35,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
                   <p class="time">10:20am</p>
                 </div>
               </div>
-              <div class="row">
+              <div id="msgRow" class="row" style="display:none">
                 <!--message start-->
                 <div id="msgMainDiv" class="message-list" style="display:none;">
                   <div class="table-responsive-md">
@@ -56,7 +56,69 @@ Objective: Create a smartwatch which able to show time, check message, play musi
                 </div>
                 <!--message end-->
               </div>
+
+              <!--music player start-->
+              <!-- <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="240" height="220"
+              frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+              <!--music player start-->
+              <div id="musicMainDiv" class="" style="display:block;">
+                <div id="main" class="row main-div" style="display:block;">
+                  <div id="image" class="" style="display:none;">
+                    <img id="poster" class="img-poster" src="media/Poster1.jpg" style="display:block;" />
+                  </div>
+                  <div id="player" class="" style="display:none;">
+                    <div id="songTitle" class="" style="display:block;">
+                      <p id="songName" class="song-name" style="display:block;">SongName</p>
+                      <p id="singerName" class="singer-name" style="display:block;">singerName</p>
+                    </div>
+                    <div id="seekbar" class="sleek-bar" style="display:block;">
+                      <div id="fill" class="music-fill"></div>
+                      <div id="handle" class="music-handler"></div>
+                    </div>
+                    <div id="buttonsMusic" class="d-flex justify-content-around sw-dia music-button" style="display:block;">
+                      <button type="button" id="musicPrev" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-backward icolor"></i></button>
+                      <button type="button" id="musicPause" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
+                      <button type="button" id="musicPlay" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
+                      <button type="button" id="musicNext" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-forward icolor"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--music player end-->
+              <!-- timer start -->
+              <div id="swMainDiv" class="col-sm-8 stopwatch-dial" style="display:none;">
+                <div class="col-sm-12 d-flex justify-content-around sw-dial">
+                  <p id="min" class="col-sm-2 minutes">00</p><i>:</i>
+                  <p id="sec" class="col-sm-2 seconds">00</p><i>:</i>
+                  <p id="cent" class="col-sm-2 centiseconds">00</p>
+                </div>
+                <div id="swButton" class="col-sm-12 d-flex justify-content-around sw-button-position">
+                  <button type="button" id="reset" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-refresh icolor"></i></button>
+                  <button type="button" id="stop" name="buttonPause" style="display:block;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
+                  <button type="button" id="start" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
+                  <button type="button" id="lap" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-repeat icolor"></i></button>
+                </div>
+                <div class="col-sm-12 d-flex justify-content-around dial-lap">
+                  <p id="lapCount" class="col-sm-6 lap-count">LAP&nbsp;:&nbsp;0</p>
+                </div>
+              </div>
+              <div id="lapStoreList" class="lap-list" style="display:none;">
+                <table class="table responsive-view">
+                  <thead>
+                  </thead>
+                  <tbody id="lapRow">
+            <tr><th scope="row" class="lap-text">#3</th><td class="lap-text">01:59</td><td class="lap-text">3:6</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- timer end -->
             <!--  smartwatch body stop   -->
+              <div class="row d-flex justify-content-around">
+                <button type="button" name="buttonUp" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-up icolor"></i></button>
+                <button type="button" id="bottomBtnNext" name="buttonNext" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-right icolor"></i></button>
+                <button type="button" id="bottomBtnBack" name="buttonBack" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-left icolor"></i></button>
+                <button type="button" id="bottomBtnScroll" name="buttonScroll" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-down icolor"></i></button>
+            </div>
             </div>
             <div class="lower-shape-upper">
               <div class="d-flex justify-content-around">

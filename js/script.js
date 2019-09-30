@@ -67,15 +67,14 @@ let reset = document.getElementById("reset");
 let lap = document.getElementById("lap"),
   currentTimer = 0,
   interval = 0,
-  count = 0,
+  count = 0, countLap = 1,hr,sc,mn,
   timeHour, weekDay,minCount=0,initSec=0;initMin=0,initCents=0,lpCount=1,
   ele = document.querySelector('.msg-content');
-ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>')
+ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>');
 let date = new Date();
 let song = new Audio();
 let lastUpdateTime = new Date().getTime();
-let currentSong = 1;
-
+let currentSong = 1,tm;
 function msgBox(v) {
   let msgFilter = message.filter((item) => item.id === v).map((v, k) => v).forEach((v, k) => {
     document.getElementById("msgMainDiv").style.display = 'none';
@@ -119,48 +118,97 @@ function playSong() {
 }
 /*music player content stop*/
 /*stopwatch start*/
-function startTimer() {
-  if (!interval) {
-    lastUpdateTime = new Date().getTime();
-    interval = setInterval(update, 1);
-  }
+function add() {
+    initCents++;
+    if (initCents >= 60) {
+        initCents = 0;
+        initSec++;
+        if (initSec >= 60) {
+            initSec= 0;
+            initMin++;
+        }
+    }
+    mins.textContent = initMin ? (initMin > 9 ?initMin : "0" + initMin) : "00";
+    secs.textContent = initSec ? (initSec > 9 ? initSec : "0" + initSec) : "00";
+    cents.textContent = initCents > 9 ? initCents : "0" + initCents;
+    timer();
+    }
+    function timer() {
+    tm=setTimeout(add, 10);
 }
-function stopTimer() {
-  clearInterval(interval);
-  interval = 0;
-}
-function resetTimer() {
-  stopTimer();
-  currentTimer = 0;
-  mins.innerHTML = secs.innerHTML = cents.innerHTML = pad(0);
+// timer();
+
+
+/* Start button */
+start.onclick = timer;
+
+/* Stop button */
+stop.onclick = function() {
+    clearTimeout(tm);
 }
 
-function pad(n) {
-  return ('00' + n).substr(-2);
+/* Clear button */
+reset.onclick = function() {
+    mins.textContent = "00";
+    secs.textContent = "00";
+    cents.textContent = "00";
+    initCents= 0; initSec = 0; initMin = 0;
+}
+lap.onclick = function() {
+lapData.push({id:countLap,lapmin:initMin,lapsec:initSec,lapcent:initCents});
+countLap++;
 }
 
-function update() {
-  let now = new Date().getTime(),
-    dt = now - lastUpdateTime;
-  currentTimer += dt;
-  let time = new Date(currentTimer);
-  secs.innerHTML = pad(time.getSeconds());
-  cents.innerHTML = pad(Math.floor(time.getMilliseconds() / 10));
-  lastUpdateTime = now;
-}
-function timerLap()
-{
-  let now = new Date().getTime(),
-    dt = now - lastUpdateTime;
-  currentTimer += dt;
-  let time = new Date(currentTimer);
-  let s=time.getSeconds();
-  let c=Math.floor(time.getMilliseconds() / 10);
-  let op=`${pad(s-initSec)} : ${pad(c-initCents)}`;
-  lapData.push({id:lpCount,clicksec:s,clickcents:c,lapsec:pad(s-initSec),lapcent:pad(c-initCents)});
-  initSec=s;initCents=c;
-  lpCount=lpCount+1;
-}
+// function lapList(){
+//     let hrs,mns,secs;
+//     lapData.forEach(ar=>{
+//         (ar.hours<10)? hrs = "0"+ar.hours : hrs = ar.hours;
+//         (ar.minutes<10)?mns = "0"+ar.minutes : mns = ar.minutes;
+//         (ar.seconds<10)?secs = "0"+ar.seconds : secs = ar.seconds;
+//         $("#lapContent").append("<h6 id='list'>lap "+ar.lap+"&nbsp;&nbsp;&nbsp;"+hrs+":"+mns+":"+secs+"<h6>")});
+// }
+// function startTimer() {
+//   if (!interval) {
+//     lastUpdateTime = new Date().getTime();
+//     interval = setInterval(update, 1);
+//   }
+// }
+// function stopTimer() {
+//   clearInterval(interval);
+//   interval = 0;
+// }
+// function resetTimer() {
+//   stopTimer();
+//   currentTimer = 0;
+//   mins.innerHTML = secs.innerHTML = cents.innerHTML = pad(0);
+// }
+//
+// function pad(n) {
+//   return ('00' + n).substr(-2);
+// }
+//
+// function update() {
+//   let now = new Date().getTime(),
+//     dt = now - lastUpdateTime;
+//   currentTimer += dt;
+//   let time = new Date(currentTimer);
+//   secs.innerHTML = pad(time.getSeconds());
+//   cents.innerHTML = pad(Math.floor(time.getMilliseconds() / 10));
+//   lastUpdateTime = now;
+// }
+// function timerLap()
+// {
+//   let now = new Date().getTime(),
+//     dt = now - lastUpdateTime;
+//   currentTimer += dt;
+//   let time = new Date(currentTimer);
+//   let s=time.getSeconds();
+//   let c=Math.floor(time.getMilliseconds() / 10);
+//   let op=`${pad(s-initSec)} : ${pad(c-initCents)}`;
+//   lapData.push({id:lpCount,clicksec:s,clickcents:c,lapsec:pad(s-initSec),lapcent:pad(c-initCents)});
+//   initSec=s;initCents=c;
+//   lpCount=lpCount+1;
+// }
 /*stopwatch stop*/
 $(document).ready(function() {
   getDayTime();
@@ -169,24 +217,18 @@ $(document).ready(function() {
   $("#content-title > .title").html();
   $("#content-title > .time").html();
   $("#start").click(function() {
-    $("#start").css("display", "none");
-    $("#stop").css("display", "block");
-    startTimer();
+    //startTimer();
   });
   $("#stop").click(function() {
-    $("#start").css("display", "block");
-    $("#stop").css("display", "none");
-    stopTimer();
+    //stopTimer();
   });
   $("#reset").click(function() {
-    $("#start").css("display", "block");
-    $("#stop").css("display", "none");
     document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + 0;
     count = 0;
-    resetTimer();
+    //resetTimer();
   });
   $("#lap").click(function() {
-    timerLap();
+  //  timerLap();
     count = count + 1;
     document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + count;
   });
@@ -221,6 +263,20 @@ $(document).ready(function() {
     });
   });
   /*message stop*/
+
+  let settings = {
+  	"async": true,
+  	"crossDomain": true,
+  	"url": "https://spotifypublicapidimasv1.p.rapidapi.com/getAlbum",
+  	"method": "POST",
+  	"headers": {
+  		"x-rapidapi-host": "SpotifyPublicAPIdimasV1.p.rapidapi.com",
+  		"x-rapidapi-key": "SIGN-UP-FOR-KEY",
+  		"content-type": "application/x-www-form-urlencoded"
+  	},
+  	"data": {}
+  }
+
   /*music player start*/
   $("#musicBtn").click(function() {
     $("#startTime").css("display", "none");
@@ -231,7 +287,7 @@ $(document).ready(function() {
     $("#msgBtn").css("background-color", "#373762");
     $("#swBtn").css("background-color", "#373762");
     $("#swMainDiv").css("display", "none");
-        $("#bottomBtnNext").css("display", "none");
+    $("#bottomBtnNext").css("display", "none");
     $("#msgMainDiv").css("display", "none");
     $("#musicMainDiv").css("display", "block");
     $(".message-read").css("display", "none");
@@ -239,8 +295,12 @@ $(document).ready(function() {
     $("#main").css("display", "block");
     $("#image").css("display", "block");
     $("#player").css("display", "block");
-    playSong();
-  });
+  //  playSong();
+}
+// $.ajax(settings).done((response)=>{
+//   console.log(response);
+// });
+);
   $("#musicPause").click(function() {
     $("#musicPause").css("display", "none");
     $("#musicPlay").css("display", "block");
@@ -275,8 +335,9 @@ $(document).ready(function() {
   });
 
   song.addEventListener('timeupdate', function() {
-    let position = song.currentTime / song.duration;
+    let position =(song.currentTime / song.duration);
     fillBar.style.width = position * 100 + '%';
+    $('#handle').css("margin-left",position * 100 + '%');
   });
   /*music player end*/
   /*stopwatch start*/
@@ -305,10 +366,10 @@ $(document).ready(function() {
     $("#bottomBtnNext").css("display", "none");
     $("#bottomBtnBack").css("display", "block");
     $("#lapStoreList").css("display", "block");
+    console.log(lapData);
     $.each(lapData, function(index, value) {
       if (index < 4) {
-        let row = '<tr>'+'<th scope="row" class="lap-text">#'+value.id+'</th>'+'<td class="lap-text">'+value.lapsec+':'+value.lapcent+
-        '</td>'+'<td class="lap-text">'+value.clicksec+':'+value.clickcents+'</td>'+'</tr>';
+        let row = '<tr>'+'<td scope="row" ><p class="lap-id">#'+value.id+'</p></td>'+'<td><p class="lap-time">'+value.lapmin+':'+value.lapsec+':'+value.lapcent+'</p></td>'+'</tr>';
         $('#lapRow').append(row).last();
       }
     });
