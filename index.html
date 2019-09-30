@@ -28,6 +28,35 @@ Objective: Create a smartwatch which able to show time, check message, play musi
             <div class="side-small-button"></div>
             <div class="side-long-button"></div>
             <div class=" inner-square">
+              <!-- smartwatch body start-->
+              <div class="row">
+                <div id="content-title" class="d-flex justify-content-around">
+                  <p class="title">MESSAGE</p>
+                  <p class="time">10:20am</p>
+                </div>
+              </div>
+              <div class="row">
+                <!--message start-->
+                <div id="msgMainDiv" class="message-list" style="display:none;">
+                  <div class="table-responsive-md">
+                    <table class="table responsive-view">
+                      <tbody id="msgRow">
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div id="msgRead" class="message-read" style="display:none;">
+                  <div class="msg-name-title">
+                    <p id="msgIcon" class="msg-icon">D</p>
+                    <p id="msgName" class="msg-name">Debarun</p>
+                  </div>
+                  <div class="msg-content">
+                    <p id="msgContent" style="margin-top:-20px;"">Hi Debarun, Good morning</p>
+                  </div>
+                </div>
+                <!--message end-->
+              </div>
+            <!--  smartwatch body stop   -->
             </div>
             <div class="lower-shape-upper">
               <div class="d-flex justify-content-around">

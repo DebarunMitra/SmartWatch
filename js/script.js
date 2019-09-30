@@ -1,6 +1,6 @@
 /*
 Author: Debarun Mitra
-Technology Used:HTML,CSS,javaScript,Bootstrap,jQuery
+Technology Used:HTML,css,javaScript,Bootstrap,jQuery
 Objective: Create a smartwatch which able to show time, check message, play music and has a stopwatch
 */
 /*music player content start*/
@@ -37,7 +37,19 @@ const message = [{
   },
   {
     id: 3,
-    sender: "John",
+    sender: "John Rambo",
+    msg: "Hi Debarun, Good morning.Hi Debarun, Good morning.Hi Debarun, Good morning.",
+    color: "#ff80df"
+  },
+  {
+    id: 4,
+    sender: "Satyajit",
+    msg: "Hi Debarun, Good morning.",
+    color: "#99ff99"
+  },
+  {
+    id: 5,
+    sender: "Retesh",
     msg: "Hi Debarun, Good morning.",
     color: "#ff80df"
   }
@@ -69,8 +81,10 @@ function msgBox(v) {
     document.getElementById("msgMainDiv").style.display = 'none';
     document.getElementById("msgRead").style.display = 'block';
     document.getElementById("msgName").innerHTML = v.sender;
-    document.getElementById("msgIcon").backgroundColor = v.color;
-    document.getElemetById("msgContent").innerHTML = v.msg;
+    document.getElementById("msgIcon").style.backgroundColor = v.color;
+    document.getElementById("msgIcon").innerHTML =v.sender.charAt(0);
+    document.getElementById("msgContent").innerHTML = v.msg;
+    console.log(v.color);console.log(v.msg);
   });
 }
 
@@ -188,7 +202,7 @@ $(document).ready(function() {
     $("#swBtn").css("background-color", "#373762");
     $("#musicMainDiv").css("display", "none");
     $("#musicMainDiv").children().hide();
-            $("#bottomBtnNext").css("display", "none");
+    $("#bottomBtnNext").css("display", "none");
     $("#main").css("display", "none");
     $("#image").css("display", "none");
     $("#player").css("display", "none");
@@ -196,13 +210,13 @@ $(document).ready(function() {
     $("#msgMainDiv").css("display", "block");
     $(".message-read").css("display", "none");
     $.each(message, function(index, value) {
-      if (index < 3) {
-        let row = '<tr>' + '<th scope="row">' +
+      if (index < 6) {
+        let row = '<tr>' + '<th style="padding:-100px;">' +
           '<p class="msg-icon" style="width:30px;background-color:' + value.color + ';">' +
-          '<span style="margin-left:30%;">' + value.sender.charAt(0) + '</span>' +
-          '</p >' + '</th>' + '<td style="width:100px;">' +
+          '<span>' + value.sender.charAt(0) + '</span>' +
+          '</p >' + '</th>' + '<td style="width:120px; height:0px;">' +
           '<p class="msg-list-name" style="cursor:pointer;" onclick="msgBox(' + value.id + ')">' + value.sender + '</p>' + '</td>' + '</tr>';
-        $('#msgRow').append(row).last();
+          $('#msgRow').append(row).last();
       }
     });
   });

@@ -33,10 +33,10 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   background: var(--watchOuterColor);
 }
 .inner-square {
-  margin-left: 15px;
-  margin-top: -190px;
-  width: 230px;
-  height: 270px;
+  margin-left: 10px;
+  margin-top: -275px;
+  width: 240px;
+  height: 280px;
   -webkit-border-radius: 20px / 20px;
   background: var(--watchInnerColor);
 }
@@ -102,4 +102,69 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   border: none;
   outline: none;
   outline:none !important;
+}
+.title {
+  margin-left: 35px;
+  color: var(--watchContentColor);
+}
+.time {
+  margin-left: 70px;
+  color: var(--watchContentColor);
+}
+.message-list {
+  margin-left: 40px;
+  margin-top: -85px;
+  max-height: 230px;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.responsive-view {
+  display: table-cell;
+  margin-left: 20%;
+}
+.msg-icon {
+  background-color: #D2691E;
+  border-radius: 50%;
+  font-weight: bold;
+  width: 30px;
+  margin-top: 8px;
+  margin-left: -5px;
+  text-align: center;
+}
+.msg-list-name {
+  color: white;
+  margin-top: 8%;
+  cursor: pointer;
+}
+.msg-name {
+  color: white;
+  margin-top: -40px;
+  width: 150px;
+  font-size: 16px;
+  text-align: center;
+}
+.message-read{
+  margin-left: 40px;
+  margin-top: -85px;
+  max-height: 200px;
+}
+.msg-content {
+  width: 200px;
+  height: 150px;
+  background: white;
+  padding-top: -20px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  transform: rotate(0deg);
+}
+.msg-content:before {
+  content: "";
+  border-top: 13px solid transparent;
+  border-right: 8px solid white;
+  border-bottom: 13px solid transparent;
 }
