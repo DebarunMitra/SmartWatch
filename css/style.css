@@ -22,7 +22,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   text-align: center;
 }
 .white-part .row{
-  margin-top: 80px;
+  margin-top: 30px;
 }
 .outer-square {
   margin-left: 20%;
@@ -34,7 +34,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 }
 .inner-square {
   margin-left: 10px;
-  margin-top: -275px;
+  margin-top: -225px;
   width: 240px;
   height: 280px;
   -webkit-border-radius: 20px / 20px;
@@ -113,7 +113,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 }
 .message-list {
   margin-left: 40px;
-  margin-top: -85px;
+  margin-top: -30px;
   max-height: 230px;
   overflow: scroll;
   overflow-x: hidden;
@@ -149,7 +149,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 }
 .message-read{
   margin-left: 40px;
-  margin-top: -85px;
+  margin-top: -30px;
   max-height: 200px;
 }
 .msg-content {
