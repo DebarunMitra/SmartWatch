@@ -317,7 +317,15 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 }
 .lap-list
 {
-  margin-left: 40px;
+  margin-left: 45px;
+  max-height: 210px;
+  max-width: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+::-webkit-scrollbar {
+    display: none;
 }
 .buttonBottom {
   margin-top: -20px;
@@ -325,4 +333,13 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   border-radius: 50px;
   background-color: var(--watchInnerColor);
   border: none;
+}
+.lap-id
+{
+  color: var(--watchContentColor);
+}
+.lap-text
+{
+  color: var(--watchContentColor);
+  margin-left: 10px;
 }

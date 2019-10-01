@@ -210,6 +210,7 @@ countLap++;
 //   lpCount=lpCount+1;
 // }
 /*stopwatch stop*/
+
 $(document).ready(function() {
   getDayTime();
   $("#startTime").html(timeHour);
@@ -264,18 +265,6 @@ $(document).ready(function() {
   });
   /*message stop*/
 
-  let settings = {
-  	"async": true,
-  	"crossDomain": true,
-  	"url": "https://spotifypublicapidimasv1.p.rapidapi.com/getAlbum",
-  	"method": "POST",
-  	"headers": {
-  		"x-rapidapi-host": "SpotifyPublicAPIdimasV1.p.rapidapi.com",
-  		"x-rapidapi-key": "SIGN-UP-FOR-KEY",
-  		"content-type": "application/x-www-form-urlencoded"
-  	},
-  	"data": {}
-  }
 
   /*music player start*/
   $("#musicBtn").click(function() {
@@ -295,12 +284,17 @@ $(document).ready(function() {
     $("#main").css("display", "block");
     $("#image").css("display", "block");
     $("#player").css("display", "block");
-  //  playSong();
-}
-// $.ajax(settings).done((response)=>{
-//   console.log(response);
-// });
-);
+    playSong();
+      $.ajax({
+        url:"https://api.spotify.com/v1/playlists/1DFixLWuPkv3KT3TnV35m3",
+        type: "GET",
+        headers :{
+          'Authorization' : 'Bearer ' + 'BQCOakxjHiOM-i_26n-2JGiWOuQoRkn6Z4x2yo26TJ58PvgggME130qAuA_QZsjq7EQVIlCDDEtxpa1rfNR8-kYb2C8zfsCQZ2v0SoTs3ygh59_ecDt9E_YGCxoIizc9ySJp8wcy1qEBEczpxgATXlSGOhmVUMgmdAOKLtZ_pa2UoN_tvIiF3pPbseF1G3EbXGcNPgfPJ2FjtF4Ifg'
+        }
+      }).done(function(data){
+
+      })
+});
   $("#musicPause").click(function() {
     $("#musicPause").css("display", "none");
     $("#musicPlay").css("display", "block");
@@ -368,8 +362,8 @@ $(document).ready(function() {
     $("#lapStoreList").css("display", "block");
     console.log(lapData);
     $.each(lapData, function(index, value) {
-      if (index < 4) {
-        let row = '<tr>'+'<td scope="row" ><p class="lap-id">#'+value.id+'</p></td>'+'<td><p class="lap-time">'+value.lapmin+':'+value.lapsec+':'+value.lapcent+'</p></td>'+'</tr>';
+      if (index < countLap) {
+        let row = '<tr>'+'<td scope="row" ><p class="lap-id">#'+value.id+'</p></td>'+'<td><p class="lap-text">'+value.lapmin+':'+value.lapsec+':'+value.lapcent+'</p></td>'+'</tr>';
         $('#lapRow').append(row).last();
       }
     });
