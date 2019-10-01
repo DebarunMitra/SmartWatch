@@ -74,7 +74,7 @@ ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>');
 let date = new Date();
 let song = new Audio();
 let lastUpdateTime = new Date().getTime();
-let currentSong = 1,tm;
+let currentSong=1,tm;
 function msgBox(v) {
   let msgFilter = message.filter((item) => item.id === v).map((v, k) => v).forEach((v, k) => {
     document.getElementById("msgMainDiv").style.display = 'none';
@@ -112,6 +112,7 @@ function getDayTime() {
 
 function playSong() {
   song.src = songs[currentSong].song;
+    console.log(currentSong);
   songName.textContent = songs[currentSong].name;
   singerName.textContent = songs[currentSong].singer;
   document.getElementById("poster").src = songs[currentSong].poster;
