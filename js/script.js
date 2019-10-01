@@ -215,12 +215,14 @@ $(document).ready(function() {
     $("#musicMainDiv").children().show();
     $("#main").css("display", "block");
     playSong();
-      // $.ajax({
+      //  $.ajax({
       //   url:"https://api.spotify.com/v1/me/playlist/4Xnj1bYhUS8Rb8cKDUASCO",
-      //   type: "GET"
+      //   type: "GET",
+      //   responseType:'application/json',
+      //   dataType:'jsonp'
       // }).done(function(data){
       //     console.log(data);
-      // })
+      // });
 });
   $("#musicPause").click(function() {
     $("#musicPause").css("display", "none");
