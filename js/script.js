@@ -32,25 +32,25 @@ const message = [{
   {
     id: 2,
     sender: "Robin",
-    msg: "Hi Debarun, Good morning.",
+    msg: "Hi Debarun, Lets go for the ride...",
     color: "#99ff99"
   },
   {
     id: 3,
     sender: "John Rambo",
-    msg: "Hi Debarun, Good morning.Hi Debarun, Good morning.Hi Debarun, Good morning.",
+    msg: "Hi Debarun, Good morning! Hi Debarun, Tomorrow evening I will come.",
     color: "#ff80df"
   },
   {
     id: 4,
     sender: "Satyajit",
-    msg: "Hi Debarun, Good morning.",
+    msg: "Hi Debarun, Good morning, Have a nice day",
     color: "#99ff99"
   },
   {
     id: 5,
     sender: "Retesh",
-    msg: "Hi Debarun, Good morning.",
+    msg: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
     color: "#ff80df"
   }
 ];
@@ -117,6 +117,7 @@ function playSong() {
   document.getElementById("poster").src = songs[currentSong].poster;
 }
 /*music player content stop*/
+
 /*stopwatch start*/
 function add() {
     initCents++;
@@ -136,8 +137,6 @@ function add() {
     function timer() {
     tm=setTimeout(add, 10);
 }
-// timer();
-
 
 /* Start button */
 start.onclick = timer;
@@ -146,7 +145,6 @@ start.onclick = timer;
 stop.onclick = function() {
     clearTimeout(tm);
 }
-
 /* Clear button */
 reset.onclick = function() {
     mins.textContent = "00";
@@ -158,57 +156,6 @@ lap.onclick = function() {
 lapData.push({id:countLap,lapmin:initMin,lapsec:initSec,lapcent:initCents});
 countLap++;
 }
-
-// function lapList(){
-//     let hrs,mns,secs;
-//     lapData.forEach(ar=>{
-//         (ar.hours<10)? hrs = "0"+ar.hours : hrs = ar.hours;
-//         (ar.minutes<10)?mns = "0"+ar.minutes : mns = ar.minutes;
-//         (ar.seconds<10)?secs = "0"+ar.seconds : secs = ar.seconds;
-//         $("#lapContent").append("<h6 id='list'>lap "+ar.lap+"&nbsp;&nbsp;&nbsp;"+hrs+":"+mns+":"+secs+"<h6>")});
-// }
-// function startTimer() {
-//   if (!interval) {
-//     lastUpdateTime = new Date().getTime();
-//     interval = setInterval(update, 1);
-//   }
-// }
-// function stopTimer() {
-//   clearInterval(interval);
-//   interval = 0;
-// }
-// function resetTimer() {
-//   stopTimer();
-//   currentTimer = 0;
-//   mins.innerHTML = secs.innerHTML = cents.innerHTML = pad(0);
-// }
-//
-// function pad(n) {
-//   return ('00' + n).substr(-2);
-// }
-//
-// function update() {
-//   let now = new Date().getTime(),
-//     dt = now - lastUpdateTime;
-//   currentTimer += dt;
-//   let time = new Date(currentTimer);
-//   secs.innerHTML = pad(time.getSeconds());
-//   cents.innerHTML = pad(Math.floor(time.getMilliseconds() / 10));
-//   lastUpdateTime = now;
-// }
-// function timerLap()
-// {
-//   let now = new Date().getTime(),
-//     dt = now - lastUpdateTime;
-//   currentTimer += dt;
-//   let time = new Date(currentTimer);
-//   let s=time.getSeconds();
-//   let c=Math.floor(time.getMilliseconds() / 10);
-//   let op=`${pad(s-initSec)} : ${pad(c-initCents)}`;
-//   lapData.push({id:lpCount,clicksec:s,clickcents:c,lapsec:pad(s-initSec),lapcent:pad(c-initCents)});
-//   initSec=s;initCents=c;
-//   lpCount=lpCount+1;
-// }
 /*stopwatch stop*/
 
 $(document).ready(function() {
@@ -235,23 +182,15 @@ $(document).ready(function() {
   });
   /*message start*/
     $("#msgBtn").click(function() {
-    $("#startTime").css("display", "none");
-    $("#weekDay").css("display", "none");
+    $("#startTime,#weekDay,#musicMainDiv,#bottomBtnNext,#main,#swMainDiv,.message-read,#lapRow,#bottomBtnBack").css("display", "none");
     $("#msgRow").empty();
     $("#content-title > .title").html("MESSAGE");
     $("#content-title > .time").html(timeHour);
     $("#musicBtn").css("background-color", "#373762");
     $("#msgBtn").css("background-color", "#00FFCC");
     $("#swBtn").css("background-color", "#373762");
-    $("#musicMainDiv").css("display", "none");
     $("#musicMainDiv").children().hide();
-    $("#bottomBtnNext").css("display", "none");
-    $("#main").css("display", "none");
-    $("#image").css("display", "none");
-    $("#player").css("display", "none");
-    $("#swMainDiv").css("display", "none");
     $("#msgMainDiv").css("display", "block");
-    $(".message-read").css("display", "none");
     $.each(message, function(index, value) {
       if (index < 6) {
         let row = '<tr>' + '<th style="padding:-100px;">' +
@@ -264,36 +203,24 @@ $(document).ready(function() {
     });
   });
   /*message stop*/
-
-
   /*music player start*/
   $("#musicBtn").click(function() {
-    $("#startTime").css("display", "none");
-    $("#weekDay").css("display", "none");
+    $("#startTime,#weekDay,#swMainDiv,#bottomBtnNext,#msgMainDiv,.message-read,#lapRow,#bottomBtnBack").css("display", "none");
     $("#content-title > .title").html("MUSIC");
     $("#content-title > .time").html(timeHour);
     $("#musicBtn").css("background-color", "#00FFCC");
     $("#msgBtn").css("background-color", "#373762");
     $("#swBtn").css("background-color", "#373762");
-    $("#swMainDiv").css("display", "none");
-    $("#bottomBtnNext").css("display", "none");
-    $("#msgMainDiv").css("display", "none");
     $("#musicMainDiv").css("display", "block");
-    $(".message-read").css("display", "none");
     $("#musicMainDiv").children().show();
     $("#main").css("display", "block");
-    $("#image").css("display", "block");
-    $("#player").css("display", "block");
     playSong();
-      $.ajax({
-        url:"https://api.spotify.com/v1/playlists/1DFixLWuPkv3KT3TnV35m3",
-        type: "GET",
-        headers :{
-          'Authorization' : 'Bearer ' + 'BQCOakxjHiOM-i_26n-2JGiWOuQoRkn6Z4x2yo26TJ58PvgggME130qAuA_QZsjq7EQVIlCDDEtxpa1rfNR8-kYb2C8zfsCQZ2v0SoTs3ygh59_ecDt9E_YGCxoIizc9ySJp8wcy1qEBEczpxgATXlSGOhmVUMgmdAOKLtZ_pa2UoN_tvIiF3pPbseF1G3EbXGcNPgfPJ2FjtF4Ifg'
-        }
-      }).done(function(data){
-
-      })
+      // $.ajax({
+      //   url:"https://api.spotify.com/v1/me/playlist/4Xnj1bYhUS8Rb8cKDUASCO",
+      //   type: "GET"
+      // }).done(function(data){
+      //     console.log(data);
+      // })
 });
   $("#musicPause").click(function() {
     $("#musicPause").css("display", "none");
@@ -331,36 +258,27 @@ $(document).ready(function() {
   song.addEventListener('timeupdate', function() {
     let position =(song.currentTime / song.duration);
     fillBar.style.width = position * 100 + '%';
-    $('#handle').css("margin-left",position * 100 + '%');
+    $('#handle').css("margin-left",position+'%');
   });
   /*music player end*/
   /*stopwatch start*/
   $("#lapRow").empty();
   $("#swBtn").click(function() {
-    $("#startTime").css("display", "none");
-    $("#weekDay").css("display", "none");
+    $("#startTime,#weekDay,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
     $("#content-title > .title").html("TIMER");
     $("#content-title > .time").html(timeHour);
     $("#musicBtn").css("background-color", "#373762");
     $("#msgBtn").css("background-color", "#373762");
     $("#swBtn").css("background-color", "#00FFCC");
-    $("#musicMainDiv").css("display", "none");
+    //$("").css("display", "none");
     $("#musicMainDiv").children().hide();
-    $("#msgMainDiv").css("display", "none");
     $("#swMainDiv").css("display", "block");
     $("#bottomBtnNext").css("display", "block");
-    $(".message-read").css("display", "none");
-    $("#main").css("display", "none");
-    $("#image").css("display", "none");
-    $("#player").css("display", "none");
   });
   $("#bottomBtnNext").click(function() {
       $("#lapRow").empty();
-    $("#swMainDiv").css("display", "none");
-    $("#bottomBtnNext").css("display", "none");
-    $("#bottomBtnBack").css("display", "block");
-    $("#lapStoreList").css("display", "block");
-    console.log(lapData);
+    $("#swMainDiv,#bottomBtnNext,#startTime,#weekDay,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
+    $("#bottomBtnBack,#lapStoreList").css("display", "block");
     $.each(lapData, function(index, value) {
       if (index < countLap) {
         let row = '<tr>'+'<td scope="row" ><p class="lap-id">#'+value.id+'</p></td>'+'<td><p class="lap-text">'+value.lapmin+':'+value.lapsec+':'+value.lapcent+'</p></td>'+'</tr>';
@@ -369,10 +287,8 @@ $(document).ready(function() {
     });
   });
   $("#bottomBtnBack").click(function() {
-    $("#swMainDiv").css("display", "block");
-    $("#bottomBtnNext").css("display", "block");
-    $("#bottomBtnBack").css("display", "none");
-    $("#lapStoreList").css("display", "none");
+    $("#swMainDiv,#bottomBtnNext,#lapRow").css("display", "block");
+    $("#bottomBtnBack,#lapStoreList,#startTime,#weekDay,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
       $("#lapRow").empty();
   });
   /*stopwatch stop*/

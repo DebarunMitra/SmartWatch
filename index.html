@@ -10,8 +10,8 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div class="container-fluid">
@@ -35,9 +35,9 @@ Objective: Create a smartwatch which able to show time, check message, play musi
                   <p class="time">10:20am</p>
                 </div>
               </div>
-              <div id="msgRow" class="row" style="display:none">
+              <div class="row" style="display:block;">
                 <!--message start-->
-                <div id="msgMainDiv" class="message-list" style="display:none;">
+                <div id="msgMainDiv" class="message-list" style="display:block;">
                   <div class="table-responsive-md">
                     <table class="table responsive-view">
                       <tbody id="msgRow">
@@ -62,16 +62,16 @@ Objective: Create a smartwatch which able to show time, check message, play musi
               frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
               <!--music player start-->
               <div id="musicMainDiv" class="" style="display:block;">
-                <div id="main" class="row main-div" style="display:block;">
-                  <div id="image" class="" style="display:none;">
-                    <img id="poster" class="img-poster" src="media/Poster1.jpg" style="display:block;" />
+                <div id="main" class="row main-div" style="display:none;">
+                  <div id="image" class="">
+                    <img id="poster" class="img-poster" src="media/Poster1.jpg" />
                   </div>
-                  <div id="player" class="" style="display:none;">
-                    <div id="songTitle" class="" style="display:block;">
-                      <p id="songName" class="song-name" style="display:block;">SongName</p>
-                      <p id="singerName" class="singer-name" style="display:block;">singerName</p>
+                  <div>
+                    <div id="songTitle">
+                      <p id="songName" class="song-name">SongName</p>
+                      <p id="singerName" class="singer-name">singerName</p>
                     </div>
-                    <div id="seekbar" class="sleek-bar" style="display:block;">
+                    <div id="seekbar" class="sleek-bar">
                       <div id="fill" class="music-fill"></div>
                       <div id="handle" class="music-handler"></div>
                     </div>
@@ -131,9 +131,9 @@ Objective: Create a smartwatch which able to show time, check message, play musi
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
