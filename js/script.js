@@ -83,7 +83,6 @@ function msgBox(v) {
     document.getElementById("msgIcon").style.backgroundColor = v.color;
     document.getElementById("msgIcon").innerHTML =v.sender.charAt(0);
     document.getElementById("msgContent").innerHTML = v.msg;
-    console.log(v.color);console.log(v.msg);
   });
 }
 
@@ -209,6 +208,7 @@ $(document).ready(function() {
     $("#musicMainDiv").children().show();
     $("#main").css("display", "block");
     playSong();
+       console.log("cs: "+currentSong);
       //  $.ajax({
       //   url:"https://api.spotify.com/v1/me/playlist/4Xnj1bYhUS8Rb8cKDUASCO",
       //   type: "GET",
