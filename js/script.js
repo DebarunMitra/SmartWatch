@@ -158,7 +158,6 @@ lapData.push({id:countLap,lapmin:initMin,lapsec:initSec,lapcent:initCents});
 countLap++;
 }
 /*stopwatch stop*/
-
 $(document).ready(function() {
   getDayTime();
   $("#startTime").html(timeHour);
@@ -166,18 +165,12 @@ $(document).ready(function() {
   $("#content-title > .title").html();
   $("#content-title > .time").html();
   $("#start").click(function() {
-    //startTimer();
-  });
-  $("#stop").click(function() {
-    //stopTimer();
   });
   $("#reset").click(function() {
     document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + 0;
     count = 0;
-    //resetTimer();
   });
   $("#lap").click(function() {
-  //  timerLap();
     count = count + 1;
     document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + count;
   });
@@ -273,7 +266,6 @@ $(document).ready(function() {
     $("#musicBtn").css("background-color", "#373762");
     $("#msgBtn").css("background-color", "#373762");
     $("#swBtn").css("background-color", "#00FFCC");
-    //$("").css("display", "none");
     $("#musicMainDiv").children().hide();
     $("#swMainDiv").css("display", "block");
     $("#bottomBtnNext").css("display", "block");
