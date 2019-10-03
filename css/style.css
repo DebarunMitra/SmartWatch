@@ -1,11 +1,12 @@
 /* Author: Debarun Mitra
 Technology Used:HTML,css,javaScript,Bootstrap,jQuery
-Objective: Create a smartwatch which able to show time, check message, play music and has a stopwatch */
+Objective: Create a smartwatch which able to show time, check message, play music and has a stopwatch
+#00FFCC*/
 :root {
   --watchOuterColor: #44446B;
   --watchInnerColor: #0C1034;
   --buttonColor: #373762;
-  --watchContentColor: #00FFCC;
+  --watchContentColor:#0080ff;
 }
 .container-fluid{
     padding-right:0;
@@ -88,6 +89,8 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   background-color: var(--buttonColor);
   border: none;
   outline:none !important;
+  width: 28px;
+  height: 28px;
 }
 
 .buttonMusic {
@@ -96,6 +99,8 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   background-color: var(--buttonColor);
   border: none;
   outline:none !important;
+  width: 28px;
+  height: 28px;
 }
 
 .buttonStopwatch {
@@ -105,13 +110,17 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   border: none;
   outline: none;
   outline:none !important;
+  width: 28px;
+  height: 28px;
 }
 .title {
   margin-left: 35px;
+  margin-top: 5px;
   color: var(--watchContentColor);
 }
 .time {
   margin-left: 70px;
+  margin-top: 5px;
   color: var(--watchContentColor);
 }
 .message-list {
@@ -129,18 +138,26 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   display: table-cell;
   margin-left: 20%;
 }
+.table > tbody > tr:first-child > td {
+    border: none;
+}
+.table > tbody > tr:first-child > th {
+    border: none;
+}
 .msg-icon {
   background-color: #D2691E;
   border-radius: 50%;
   font-weight: bold;
   width: 30px;
-  margin-top: 8px;
-  margin-left: -5px;
+  height: 30px;
   text-align: center;
+}
+.icon-let{
+
 }
 .msg-list-name {
   color: white;
-  margin-top: 8%;
+  margin-top: 0%;
   cursor: pointer;
 }
 .msg-name {
@@ -328,7 +345,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
     display: none;
 }
 .buttonBottom {
-  margin-top: -15px;
+  margin-top: -18px;
   margin-left: 0px;
   border-radius: 50px;
   background-color: var(--watchInnerColor);

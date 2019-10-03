@@ -83,7 +83,6 @@ function msgBox(v) {
     document.getElementById("msgIcon").style.backgroundColor = v.color;
     document.getElementById("msgIcon").innerHTML =v.sender.charAt(0);
     document.getElementById("msgContent").innerHTML = v.msg;
-    console.log(v.color);console.log(v.msg);
   });
 }
 
@@ -165,18 +164,14 @@ $(document).ready(function() {
   $("#content-title > .title").html();
   $("#content-title > .time").html();
   $("#start").click(function() {
-    //startTimer();
   });
   $("#stop").click(function() {
-    //stopTimer();
   });
   $("#reset").click(function() {
     document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + 0;
     count = 0;
-    //resetTimer();
   });
   $("#lap").click(function() {
-  //  timerLap();
     count = count + 1;
     document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + count;
   });
@@ -187,16 +182,16 @@ $(document).ready(function() {
     $("#content-title > .title").html("MESSAGE");
     $("#content-title > .time").html(timeHour);
     $("#musicBtn").css("background-color", "#373762");
-    $("#msgBtn").css("background-color", "#00FFCC");
+    $("#msgBtn").css("background-color", "#0080ff");
     $("#swBtn").css("background-color", "#373762");
     $("#musicMainDiv").children().hide();
     $("#msgMainDiv").css("display", "block");
     $.each(message, function(index, value) {
       if (index < 6) {
-        let row = '<tr>' + '<th style="padding:-100px;">' +
-          '<p class="msg-icon" style="width:30px;background-color:' + value.color + ';">' +
-          '<span>' + value.sender.charAt(0) + '</span>' +
-          '</p >' + '</th>' + '<td style="width:120px; height:0px;">' +
+        let row = '<tr>' + '<th>' +
+          '<p class="msg-icon" style="background-color:' + value.color + ';">' +
+          '<span class="icon-let">' + value.sender.charAt(0) + '</span>' +
+          '</p >' + '</th>' + '<td>' +
           '<p class="msg-list-name" style="cursor:pointer;" onclick="msgBox(' + value.id + ')">' + value.sender + '</p>' + '</td>' + '</tr>';
           $('#msgRow').append(row).last();
       }
@@ -208,7 +203,7 @@ $(document).ready(function() {
     $("#startTime,#weekDay,#swMainDiv,#bottomBtnNext,#msgMainDiv,.message-read,#lapRow,#bottomBtnBack").css("display", "none");
     $("#content-title > .title").html("MUSIC");
     $("#content-title > .time").html(timeHour);
-    $("#musicBtn").css("background-color", "#00FFCC");
+    $("#musicBtn").css("background-color", "#0080ff");
     $("#msgBtn").css("background-color", "#373762");
     $("#swBtn").css("background-color", "#373762");
     $("#musicMainDiv").css("display", "block");
@@ -216,7 +211,7 @@ $(document).ready(function() {
     $("#main").css("display", "block");
     playSong();
       //  $.ajax({
-      //   url:"https://api.spotify.com/v1/me/playlist/4Xnj1bYhUS8Rb8cKDUASCO",
+      //   url:"https://api.spotify.com/v1/playlists/4Xnj1bYhUS8Rb8cKDUASCO",
       //   type: "GET",
       //   responseType:'application/json',
       //   dataType:'jsonp'
@@ -271,7 +266,7 @@ $(document).ready(function() {
     $("#content-title > .time").html(timeHour);
     $("#musicBtn").css("background-color", "#373762");
     $("#msgBtn").css("background-color", "#373762");
-    $("#swBtn").css("background-color", "#00FFCC");
+    $("#swBtn").css("background-color", "#0080ff");
     //$("").css("display", "none");
     $("#musicMainDiv").children().hide();
     $("#swMainDiv").css("display", "block");
