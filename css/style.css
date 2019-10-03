@@ -40,7 +40,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
  }
 .color-part{
   background-color: #0080ff;
-  height:100vh;
+  height:100vmax;
   text-align: center;
 }
 .white-part{
@@ -216,19 +216,19 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 .img-poster {
   width: 80px;
   margin-top: -20px;
-  margin-left: 90px;
+  margin-left: 92px;
   border-radius: 120%;
 }
 
 .song-name {
   color: white;
-  margin-left: 90px;
+  text-align: center;
 }
 
 .singer-name {
   margin-top: -20px;
   color: white;
-  margin-left: 90px;
+  text-align: center;
 }
 
 .sleek-bar {

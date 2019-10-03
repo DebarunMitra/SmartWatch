@@ -21,7 +21,25 @@ const songs = [{
     name: "worKing",
     singer: "Unknown",
     poster: "media/Poster3.jpg"
-  }
+  },
+{
+  song: "media/RihannaDiamonds.mp3",
+  name: "RihannaDiamonds",
+  singer: "Rihanna",
+  poster: "media/Poster5.jpg"
+},
+{
+  song: "media/SlowDown.mp3",
+  name: "SlowDown",
+  singer: "Selena Gomez",
+  poster: "media/Poster4.jpg"
+},
+{
+  song: "media/HALCYON.mp3",
+  name: "HALCYON",
+  singer: "Ellie Goulding",
+  poster: "media/Poster6.jpg"
+}
 ];
 const message = [{
     id: 1,
@@ -74,7 +92,7 @@ ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>');
 let date = new Date();
 let song = new Audio();
 let lastUpdateTime = new Date().getTime();
-let currentSong = 1,tm;
+let currentSong = 2,tm;
 function msgBox(v) {
   let msgFilter = message.filter((item) => item.id === v).map((v, k) => v).forEach((v, k) => {
     document.getElementById("msgMainDiv").style.display = 'none';
@@ -253,7 +271,7 @@ $(document).ready(function() {
     $("#musicPlay").css("display", "block");
     song.pause();
     currentSong++;
-    if (currentSong > 2) {
+    if (currentSong > 5) {
       currentSong = 0;
     }
     $(".img-poster").attr("src", songs[currentSong].poster);
@@ -269,19 +287,19 @@ $(document).ready(function() {
   /*stopwatch start*/
   $("#lapRow").empty();
   $("#swBtn").click(function() {
-    $("#homeScreen,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
+    $("#homeScreen,#musicMainDiv,#msgMainDiv,.message-read,#main,#lapRow,#bottomBtnBack").css("display", "none");
     $("#content-title > .title").html("TIMER");
     $("#content-title > .time").html(timeHour);
     $("#musicBtn").css("background-color", "#373762");
     $("#msgBtn").css("background-color", "#373762");
     $("#swBtn").css("background-color", "#0080ff");
     //$("").css("display", "none");
+    $("#lapRow").empty();
     $("#musicMainDiv").children().hide();
-    $("#swMainDiv").css("display", "block");
-    $("#bottomBtnNext").css("display", "block");
+    $("#swMainDiv,#bottomBtnNext").css("display", "block");
   });
   $("#bottomBtnNext").click(function() {
-      $("#lapRow").empty();
+    $("#lapRow").empty();
     $("#swMainDiv,#bottomBtnNext,#startTime,#weekDay,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
     $("#bottomBtnBack,#lapStoreList").css("display", "block");
     $.each(lapData, function(index, value) {
