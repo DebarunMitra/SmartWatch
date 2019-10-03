@@ -74,7 +74,7 @@ ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>');
 let date = new Date();
 let song = new Audio();
 let lastUpdateTime = new Date().getTime();
-let currentSong = 1,tm;
+let currentSong=1,tm;
 function msgBox(v) {
   let msgFilter = message.filter((item) => item.id === v).map((v, k) => v).forEach((v, k) => {
     document.getElementById("msgMainDiv").style.display = 'none';
@@ -111,6 +111,7 @@ function getDayTime() {
 
 function playSong() {
   song.src = songs[currentSong].song;
+    console.log(currentSong);
   songName.textContent = songs[currentSong].name;
   singerName.textContent = songs[currentSong].singer;
   document.getElementById("poster").src = songs[currentSong].poster;
@@ -156,7 +157,6 @@ lapData.push({id:countLap,lapmin:initMin,lapsec:initSec,lapcent:initCents});
 countLap++;
 }
 /*stopwatch stop*/
-
 $(document).ready(function() {
   getDayTime();
   $("#startTime").html(timeHour);
@@ -164,8 +164,6 @@ $(document).ready(function() {
   $("#content-title > .title").html();
   $("#content-title > .time").html();
   $("#start").click(function() {
-  });
-  $("#stop").click(function() {
   });
   $("#reset").click(function() {
     document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + 0;
@@ -210,6 +208,7 @@ $(document).ready(function() {
     $("#musicMainDiv").children().show();
     $("#main").css("display", "block");
     playSong();
+       console.log("cs: "+currentSong);
       //  $.ajax({
       //   url:"https://api.spotify.com/v1/playlists/4Xnj1bYhUS8Rb8cKDUASCO",
       //   type: "GET",
