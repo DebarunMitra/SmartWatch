@@ -20,6 +20,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 .home-time > p:nth-child(4){
   font-size: 15px;
   margin-left: -10px;
+  text-align: center;
 }
  .home-time > p:nth-child(2) > span:nth-child(1){
   font-size: 50px;
