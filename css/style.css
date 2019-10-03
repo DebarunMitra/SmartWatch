@@ -8,6 +8,32 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   --buttonColor: #373762;
   --watchContentColor:#0080ff;
 }
+.home-time{
+  margin-left: 60px;
+  margin-top: 60px;
+  color: var(--watchContentColor);
+}
+ .home-time > p:nth-child(1) > span:nth-child(1){
+  font-size: 50px;
+}
+.home-time > p:nth-child(2){
+ font-size: 15px;
+ margin-left: 30px;
+ margin-top: -20px;
+}
+/*.home-time > p > span{
+  font-size: 20px;
+}
+.home-time > p > span:nth-child(1){
+  font-size: 20px;
+  margin-top: -20px;
+  margin-left: 40px;
+}
+.home-time > p > span:nth-child(2){
+  margin-top: -20px;
+  margin-left: 40px;
+  font-size: 15px;
+} */
 .container-fluid{
     padding-right:0;
     padding-left:0;

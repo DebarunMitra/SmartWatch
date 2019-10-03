@@ -68,13 +68,13 @@ let lap = document.getElementById("lap"),
   currentTimer = 0,
   interval = 0,
   count = 0, countLap = 1,hr,sc,mn,
-  timeHour, weekDay,minCount=0,initSec=0;initMin=0,initCents=0,lpCount=1,
+  timeHour, weekDay,jt,jap,minCount=0,initSec=0;initMin=0,initCents=0,lpCount=1,
   ele = document.querySelector('.msg-content');
 ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>');
 let date = new Date();
 let song = new Audio();
 let lastUpdateTime = new Date().getTime();
-let currentSong=1,tm;
+let currentSong = 1,tm;
 function msgBox(v) {
   let msgFilter = message.filter((item) => item.id === v).map((v, k) => v).forEach((v, k) => {
     document.getElementById("msgMainDiv").style.display = 'none';
@@ -105,13 +105,13 @@ function getDayTime() {
   }
   (h1 < 10) ? h1 = "0" + h1: h1 = h1;
   time = h1 + ":" + min + " " + ampm;
+  jt= h1 + ":" + min ;jap=ampm;
   timeHour = time;
   weekDay = days[day];
 }
 
 function playSong() {
   song.src = songs[currentSong].song;
-    console.log(currentSong);
   songName.textContent = songs[currentSong].name;
   singerName.textContent = songs[currentSong].singer;
   document.getElementById("poster").src = songs[currentSong].poster;
@@ -157,13 +157,17 @@ lapData.push({id:countLap,lapmin:initMin,lapsec:initSec,lapcent:initCents});
 countLap++;
 }
 /*stopwatch stop*/
+
 $(document).ready(function() {
   getDayTime();
-  $("#startTime").html(timeHour);
+  $("#startTime > span:nth-child(1)").html(jt);
+  $("#startTime > span:nth-child(2)").html(jap);
   $("#weekDay").html(weekDay);
   $("#content-title > .title").html();
   $("#content-title > .time").html();
   $("#start").click(function() {
+  });
+  $("#stop").click(function() {
   });
   $("#reset").click(function() {
     document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + 0;
@@ -175,7 +179,7 @@ $(document).ready(function() {
   });
   /*message start*/
     $("#msgBtn").click(function() {
-    $("#startTime,#weekDay,#musicMainDiv,#bottomBtnNext,#main,#swMainDiv,.message-read,#lapRow,#bottomBtnBack").css("display", "none");
+    $("#homeScreen,#musicMainDiv,#bottomBtnNext,#main,#swMainDiv,.message-read,#lapRow,#bottomBtnBack").css("display", "none");
     $("#msgRow").empty();
     $("#content-title > .title").html("MESSAGE");
     $("#content-title > .time").html(timeHour);
@@ -198,7 +202,7 @@ $(document).ready(function() {
   /*message stop*/
   /*music player start*/
   $("#musicBtn").click(function() {
-    $("#startTime,#weekDay,#swMainDiv,#bottomBtnNext,#msgMainDiv,.message-read,#lapRow,#bottomBtnBack").css("display", "none");
+    $("#homeScreen,#swMainDiv,#bottomBtnNext,#msgMainDiv,.message-read,#lapRow,#bottomBtnBack").css("display", "none");
     $("#content-title > .title").html("MUSIC");
     $("#content-title > .time").html(timeHour);
     $("#musicBtn").css("background-color", "#0080ff");
@@ -208,7 +212,6 @@ $(document).ready(function() {
     $("#musicMainDiv").children().show();
     $("#main").css("display", "block");
     playSong();
-       console.log("cs: "+currentSong);
       //  $.ajax({
       //   url:"https://api.spotify.com/v1/playlists/4Xnj1bYhUS8Rb8cKDUASCO",
       //   type: "GET",
@@ -260,7 +263,7 @@ $(document).ready(function() {
   /*stopwatch start*/
   $("#lapRow").empty();
   $("#swBtn").click(function() {
-    $("#startTime,#weekDay,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
+    $("#homeScreen,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
     $("#content-title > .title").html("TIMER");
     $("#content-title > .time").html(timeHour);
     $("#musicBtn").css("background-color", "#373762");
