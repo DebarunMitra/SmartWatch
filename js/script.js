@@ -67,7 +67,7 @@ let reset = document.getElementById("reset");
 let lap = document.getElementById("lap"),
   currentTimer = 0,
   interval = 0,
-  count = 0, countLap = 1,hr,sc,mn,
+  count = 0, countLap = 1,hr,sc,mn,msg1,msg2,
   timeHour, weekDay,jt,jap,minCount=0,initSec=0;initMin=0,initCents=0,lpCount=1,
   ele = document.querySelector('.msg-content');
 ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>');
@@ -90,7 +90,7 @@ function getDayTime() {
   let h = date.getHours();
   let min = date.getMinutes();
   let day = date.getDay();
-  let ampm, h1, time, p;
+  let ampm, h1, time, p,morning,noon,evening,night;
   const days = new Array('SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THRUSDAY', 'FRIDAY', 'SATURDAY');
   (h >= 12) ? ampm = 'PM': ampm = 'AM';
   (min < 10) ? min = "0" + min: min = min;
@@ -108,6 +108,14 @@ function getDayTime() {
   jt= h1 + ":" + min ;jap=ampm;
   timeHour = time;
   weekDay = days[day];
+  morning="Good Morning";noon="Good Afrernoon";evening="Good Evening";night="Good Night";
+  (ampm=='AM' && h<=9)?(msg1=morning,msg2='Charge your day with YOGA'):
+  (ampm=='AM' && h<=11)?(msg1=morning,msg2='You are late today, Lets take coffee'):true;
+  (ampm=='PM' && (h==12 || h<=2))?( msg1=noon,msg2='Lets complete the works'):
+  (ampm=='PM' && h<=5)?(msg1=noon,msg2='Take a break'):
+  (ampm=='PM' && h<=8)?(msg1=evening,msg2='Return to home & take your Dinner'):
+  (ampm=='PM' && h<=11)?(msg1=night,msg2='Early Bed, Early Rise'):
+  (ampm=='AM' && (h==12 || h<=4))?(msg1=night,msg2='Time to sleep'):true;
 }
 
 function playSong() {
@@ -160,15 +168,13 @@ countLap++;
 
 $(document).ready(function() {
   getDayTime();
+  $(".home-time > p:nth-child(1)").html(msg1);
   $("#startTime > span:nth-child(1)").html(jt);
   $("#startTime > span:nth-child(2)").html(jap);
   $("#weekDay").html(weekDay);
+  $(".home-time > p:nth-child(4)").html(msg2);
   $("#content-title > .title").html();
   $("#content-title > .time").html();
-  $("#start").click(function() {
-  });
-  $("#stop").click(function() {
-  });
   $("#reset").click(function() {
     document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + 0;
     count = 0;
