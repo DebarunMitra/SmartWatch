@@ -21,19 +21,6 @@ Objective: Create a smartwatch which able to show time, check message, play musi
  margin-left: 30px;
  margin-top: -20px;
 }
-/*.home-time > p > span{
-  font-size: 20px;
-}
-.home-time > p > span:nth-child(1){
-  font-size: 20px;
-  margin-top: -20px;
-  margin-left: 40px;
-}
-.home-time > p > span:nth-child(2){
-  margin-top: -20px;
-  margin-left: 40px;
-  font-size: 15px;
-} */
 .container-fluid{
     padding-right:0;
     padding-left:0;
