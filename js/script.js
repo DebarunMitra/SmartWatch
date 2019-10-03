@@ -97,10 +97,10 @@ function getDayTime() {
   h = h % 12;
   h1 = h;
   if (h == 0) {
-    h = 12;
+    h1 = 12;
     p = 0;
   } else if (h < 10) {
-    h = h;
+    h1 = h;
     p = h;
   }
   (h1 < 10) ? h1 = "0" + h1: h1 = h1;
