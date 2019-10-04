@@ -356,7 +356,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 }
 .lap-list
 {
-  margin-left: 45px;
+  margin-left: 60px;
   max-height: 210px;
   max-width: 300px;
   overflow: scroll;

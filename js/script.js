@@ -85,7 +85,7 @@ let reset = document.getElementById("reset");
 let lap = document.getElementById("lap"),
   currentTimer = 0,
   interval = 0,
-  count = 0, countLap = 1,hr,sc,mn,msg1,msg2,
+  count = 0, countLap = 1,hr,sc,mc=0,mn,msg1,msg2,
   timeHour, weekDay,jt,jap,minCount=0,initSec=0;initMin=0,initCents=0,lpCount=1,
   ele = document.querySelector('.msg-content');
 ele.innerHTML = ele.innerHTML.replace(/,/g, ',<br/>');
@@ -103,7 +103,6 @@ function msgBox(v) {
     document.getElementById("msgContent").innerHTML = v.msg;
   });
 }
-
 function getDayTime() {
   let h = date.getHours();
   let min = date.getMinutes();
@@ -135,7 +134,7 @@ function getDayTime() {
   (ampm=='PM' && h<=11)?(msg1=night,msg2='Early Bed, Early Rise'):
   (ampm=='AM' && (h==12 || h<=4))?(msg1=night,msg2='Time to sleep'):true;
 }
-
+/*music player content start*/
 function playSong() {
   song.src = songs[currentSong].song;
   songName.textContent = songs[currentSong].name;
@@ -145,42 +144,39 @@ function playSong() {
 /*music player content stop*/
 
 /*stopwatch start*/
-function add() {
-    initCents++;
-    if (initCents >= 60) {
-        initCents = 0;
-        initSec++;
-        if (initSec >= 60) {
-            initSec= 0;
-            initMin++;
-        }
-    }
+function startTimer() {
+  if (!interval) {
+    lastUpdateTime = new Date().getTime();
+    interval = setInterval(update, 20);
+  }
+}
+function stopTimer() {
+  clearInterval(interval);
+  interval = 0;
+}
+function resetTimer() {
+  stopTimer();
+  currentTimer = 0;
+  mins.innerHTML = secs.innerHTML = cents.innerHTML = '00';
+}
+function update() {
+  initCents++;
+  if (initCents >= 60) {
+      initCents = 0;
+      initSec++;
+  if (initSec >= 60) {
+      initSec= 0;
+      initMin++;
+      }
+  }
     mins.textContent = initMin ? (initMin > 9 ?initMin : "0" + initMin) : "00";
     secs.textContent = initSec ? (initSec > 9 ? initSec : "0" + initSec) : "00";
     cents.textContent = initCents > 9 ? initCents : "0" + initCents;
-    timer();
-    }
-    function timer() {
-    tm=setTimeout(add, 10);
+    startTimer()
 }
-
-/* Start button */
-start.onclick = timer;
-
-/* Stop button */
-stop.onclick = function() {
-    clearTimeout(tm);
-}
-/* Clear button */
-reset.onclick = function() {
-    mins.textContent = "00";
-    secs.textContent = "00";
-    cents.textContent = "00";
-    initCents= 0; initSec = 0; initMin = 0;
-}
-lap.onclick = function() {
-lapData.push({id:countLap,lapmin:initMin,lapsec:initSec,lapcent:initCents});
-countLap++;
+function timerLap()
+{
+  lapData.push({id:count+1,lapmin:initMin,lapsec:initSec,lapcent:initCents});
 }
 /*stopwatch stop*/
 
@@ -193,14 +189,6 @@ $(document).ready(function() {
   $(".home-time > p:nth-child(4)").html(msg2);
   $("#content-title > .title").html();
   $("#content-title > .time").html();
-  $("#reset").click(function() {
-    document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + 0;
-    count = 0;
-  });
-  $("#lap").click(function() {
-    count = count + 1;
-    document.getElementById("lapCount").innerHTML = 'LAP&nbsp;:&nbsp;' + count;
-  });
   /*message start*/
     $("#msgBtn").click(function() {
     $("#homeScreen,#musicMainDiv,#bottomBtnNext,#main,#swMainDiv,.message-read,#lapRow,#bottomBtnBack").css("display", "none");
@@ -293,25 +281,47 @@ $(document).ready(function() {
     $("#musicBtn").css("background-color", "#373762");
     $("#msgBtn").css("background-color", "#373762");
     $("#swBtn").css("background-color", "#0080ff");
-    //$("").css("display", "none");
     $("#lapRow").empty();
     $("#musicMainDiv").children().hide();
     $("#swMainDiv,#bottomBtnNext,.title,.time").css("display", "block");
   });
+  $("#start").click(function() {
+    $("#start").css("display", "none");
+    $("#stop").css("display", "block");
+    startTimer();
+  });
+  $("#stop").click(function() {
+    $("#start").css("display", "block");
+    $("#stop").css("display", "none");
+    stopTimer();
+  });
+  $("#reset").click(function() {
+    $("#start").css("display", "block");
+    $("#stop").css("display", "none");
+    $("#lapCount").html('LAP&nbsp;:&nbsp;' + 0);
+    count = 0;
+    resetTimer();
+  });
+  $("#lap").click(function() {
+    timerLap();
+    count = count + 1;
+    $("#lapCount").html('LAP&nbsp;:&nbsp;' + count);
+  });
   $("#bottomBtnNext").click(function() {
     $("#lapRow").empty();
-    $("#swMainDiv,#bottomBtnNext,#startTime,#weekDay,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
-    $("#bottomBtnBack,#lapStoreList").css("display", "block");
+    $("#swMainDiv,#bottomBtnNext,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
+    $("#bottomBtnBack,#lapStoreList,#lapRow").css("display", "block");
     $.each(lapData, function(index, value) {
-      if (index < countLap) {
-        let row = '<tr>'+'<td scope="row" ><p class="lap-id">#'+value.id+'</p></td>'+'<td><p class="lap-text">'+value.lapmin+':'+value.lapsec+':'+value.lapcent+'</p></td>'+'</tr>';
+      if (index < count) {
+        let row = '<tr>'+'<td scope="row" ><p class="lap-id">#'+value.id+'</p></td>'+'<td><p class="lap-text">'+value.lapmin
+        +':'+value.lapsec+':'+value.lapcent+'</p></td>'+'</tr>';
         $('#lapRow').append(row).last();
       }
     });
   });
   $("#bottomBtnBack").click(function() {
     $("#swMainDiv,#bottomBtnNext,#lapRow").css("display", "block");
-    $("#bottomBtnBack,#lapStoreList,#startTime,#weekDay,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
+    $("#bottomBtnBack,#lapStoreList,#musicMainDiv,#msgMainDiv,.message-read,#main").css("display", "none");
       $("#lapRow").empty();
   });
   /*stopwatch stop*/
