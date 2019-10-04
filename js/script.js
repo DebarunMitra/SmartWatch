@@ -128,7 +128,7 @@ function getDayTime() {
   weekDay = days[day];
   morning="Good Morning";noon="Good Afrernoon";evening="Good Evening";night="Good Night";
   (ampm=='AM' && h<=9)?(msg1=morning,msg2='Charge your day with YOGA'):
-  (ampm=='AM' && h<=11)?(msg1=morning,msg2='You are late today, Lets take coffee'):true;
+  (ampm=='AM' && h<=11)?(msg1=morning,msg2='Lets take coffee'):true;
   (ampm=='PM' && (h==12 || h<=2))?( msg1=noon,msg2='Lets complete the works'):
   (ampm=='PM' && h<=5)?(msg1=noon,msg2='Take a break'):
   (ampm=='PM' && h<=8)?(msg1=evening,msg2='Return to home & take your Dinner'):
@@ -211,7 +211,7 @@ $(document).ready(function() {
     $("#msgBtn").css("background-color", "#0080ff");
     $("#swBtn").css("background-color", "#373762");
     $("#musicMainDiv").children().hide();
-    $("#msgMainDiv").css("display", "block");
+    $("#msgMainDiv,.title,.time").css("display", "block");
     $.each(message, function(index, value) {
       if (index < 6) {
         let row = '<tr>' + '<th>' +
@@ -234,7 +234,7 @@ $(document).ready(function() {
     $("#swBtn").css("background-color", "#373762");
     $("#musicMainDiv").css("display", "block");
     $("#musicMainDiv").children().show();
-    $("#main").css("display", "block");
+    $("#main,.title,.time").css("display", "block");
     playSong();
       //  $.ajax({
       //   url:"https://api.spotify.com/v1/playlists/4Xnj1bYhUS8Rb8cKDUASCO",
@@ -296,7 +296,7 @@ $(document).ready(function() {
     //$("").css("display", "none");
     $("#lapRow").empty();
     $("#musicMainDiv").children().hide();
-    $("#swMainDiv,#bottomBtnNext").css("display", "block");
+    $("#swMainDiv,#bottomBtnNext,.title,.time").css("display", "block");
   });
   $("#bottomBtnNext").click(function() {
     $("#lapRow").empty();
@@ -315,4 +315,11 @@ $(document).ready(function() {
       $("#lapRow").empty();
   });
   /*stopwatch stop*/
+  /*double click homeScreen start*/
+  $("#msgBtn,#musicBtn,#swBtn").dblclick(function(){
+        $(".title,.time,#musicMainDiv,#msgMainDiv,.message-read,#main,#lapRow,#bottomBtnBack,#swMainDiv,#bottomBtnNext").css("display", "none");
+        $("#msgBtn,#musicBtn,#swBtn").css("background-color", "#373762");
+        $("#homeScreen").fadeIn();
+  });
+  /*double click homeScreen end*/
 });
