@@ -16,10 +16,10 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 .home-time > p:nth-child(1){
   font-size: 20px;
   margin-top: -20px;
+  margin-left: 10px;
 }
 .home-time > p:nth-child(4){
   font-size: 15px;
-  margin-left: -10px;
   text-align: center;
 }
  .home-time > p:nth-child(2) > span:nth-child(1){
@@ -27,7 +27,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 }
 .home-time > p:nth-child(3){
  font-size: 15px;
- margin-left: 30px;
+ margin-left: 50px;
  margin-top: -20px;
 }
 .container-fluid{
