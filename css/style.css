@@ -37,11 +37,13 @@ Objective: Create a smartwatch which able to show time, check message, play musi
     margin-left:auto
  }
  .text-pos{
-   margin-top: 50%;
+   margin-top: 40%;
+   font-size: 50px;
  }
 .color-part{
   background-color: #0080ff;
-  height:100vmax;
+  height:100vh;
+  width: 50%;
   text-align: center;
 }
 .white-part{
@@ -175,7 +177,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   text-align: center;
 }
 .icon-let{
-
+  margin-top: 15%;
 }
 .msg-list-name {
   color: white;
@@ -184,7 +186,8 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 }
 .msg-name {
   color: white;
-  margin-top: -40px;
+  margin-top: -45px;
+  margin-left: 10px;
   width: 150px;
   font-size: 16px;
   text-align: center;
@@ -356,7 +359,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 }
 .lap-list
 {
-  margin-left: 60px;
+  margin-left: 50px;
   max-height: 210px;
   max-width: 300px;
   overflow: scroll;

@@ -56,7 +56,7 @@ const message = [{
   {
     id: 3,
     sender: "John Rambo",
-    msg: "Hi Debarun, Good morning! Hi Debarun, Tomorrow evening I will come.",
+    msg: "Hi Debarun, Good morning! Tomorrow evening we start our mission. Make sure your bag-pack will ready. ︻╦̵̵͇̿══╤─",
     color: "#ff80df"
   },
   {
