@@ -5,6 +5,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>SmartWatchApplication</title>
   <meta charset="utf-8">
@@ -13,12 +14,13 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
   <div class="container-fluid">
     <div class="row">
       <div class="col-6 color-part">
         <div class="text-pos">
-          <p><b  style="color:white;">Smart&nbsp;</b><b>Watch</b></p>
+          <p><b style="color:white;">Smart&nbsp;</b><b>Watch</b></p>
         </div>
       </div>
       <div class="col-6 white-part">
@@ -66,83 +68,86 @@ Objective: Create a smartwatch which able to show time, check message, play musi
               </div>
 
               <!--music player start-->
-              <!-- <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="240" height="220"
-              frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
-              <!--music player start-->
-              <div id="musicMainDiv" class="" style="display:block;">
-                <div id="main" class="row main-div" style="display:none;">
-                  <div id="image" class="">
-                    <img id="poster" class="img-poster" src="media/Poster1.jpg" />
+              <!-- <iframe src=" https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="240" height="220" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+                      <!--music player start-->
+                      <div id="musicMainDiv" class="" style="display:block;">
+                        <div id="main" class="row main-div" style="display:none;">
+                          <div id="image" class="">
+                            <img id="poster" class="img-poster" src="media/Poster1.jpg" />
+                          </div>
+                          <div>
+                            <div id="songTitle">
+                              <p id="songName" class="song-name">SongName</p>
+                              <p id="singerName" class="singer-name">singerName</p>
+                            </div>
+                            <div id="seekbar" class="sleek-bar">
+                              <div id="fill" class="music-fill"></div>
+                              <div id="handle" class="music-handler"></div>
+                            </div>
+                            <div id="buttonsMusic" class="d-flex justify-content-around sw-dia music-button" style="display:block;">
+                              <button type="button" id="musicPrev" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-backward icolor"></i></button>
+                              <button type="button" id="musicPause" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
+                              <button type="button" id="musicPlay" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
+                              <button type="button" id="musicNext" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-forward icolor"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--music player end-->
+                      <!-- timer start -->
+                      <div id="swMainDiv" class="col-sm-8 stopwatch-dial" style="display:none;">
+                        <div class="col-sm-12 d-flex justify-content-around sw-dial">
+                          <p id="min" class="col-sm-2 minutes">00</p><i>:</i>
+                          <p id="sec" class="col-sm-2 seconds">00</p><i>:</i>
+                          <p id="cent" class="col-sm-2 centiseconds">00</p>
+                        </div>
+                        <div id="swButton" class="col-sm-12 d-flex justify-content-around sw-button-position">
+                          <button type="button" id="reset" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-refresh icolor"></i></button>
+                          <button type="button" id="stop" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
+                          <button type="button" id="start" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
+                          <button type="button" id="lap" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-hourglass icolor"></i></button>
+                        </div>
+                        <div class="col-sm-12 d-flex justify-content-around dial-lap">
+                          <p id="lapCount" class="col-sm-6 lap-count">LAP&nbsp;:&nbsp;0</p>
+                        </div>
+                      </div>
+                      <div id="lapStoreList" class="lap-list" style="display:none;">
+                        <table class="table responsive-view">
+                          <thead>
+                          </thead>
+                          <tbody id="lapRow">
+                            <tr>
+                              <th scope="row" class="lap-text">#3</th>
+                              <td class="lap-text">01:59</td>
+                              <td class="lap-text">3:6</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- timer end -->
+                      <!--  smartwatch body stop   -->
+                      <div class="row d-flex justify-content-around">
+                        <!-- <button type="button" name="buttonUp" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-up icolor"></i></button> -->
+                        <button type="button" id="bottomBtnNext" name="buttonNext" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-right icolor"></i></button>
+                        <button type="button" id="bottomBtnBack" name="buttonBack" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-left icolor"></i></button>
+                        <!-- <button type="button" id="bottomBtnScroll" name="buttonScroll" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-down icolor"></i></button> -->
+                      </div>
                   </div>
-                  <div>
-                    <div id="songTitle">
-                      <p id="songName" class="song-name">SongName</p>
-                      <p id="singerName" class="singer-name">singerName</p>
-                    </div>
-                    <div id="seekbar" class="sleek-bar">
-                      <div id="fill" class="music-fill"></div>
-                      <div id="handle" class="music-handler"></div>
-                    </div>
-                    <div id="buttonsMusic" class="d-flex justify-content-around sw-dia music-button" style="display:block;">
-                      <button type="button" id="musicPrev" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-backward icolor"></i></button>
-                      <button type="button" id="musicPause" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
-                      <button type="button" id="musicPlay" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
-                      <button type="button" id="musicNext" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-forward icolor"></i></button>
+                  <div class="lower-shape-upper">
+                    <div class="d-flex justify-content-around">
+                      <button type="button" id="msgBtn" name="buttonComment" class="buttonComment"><i class="fa fa-comments-o icolor"></i></button>
+                      <button type="button" id="musicBtn" name="buttonMusic" class="buttonMusic"><i class="fa fa-music icolor"></i></button>
+                      <button type="button" id="swBtn" name="buttonStopwatch" class="buttonStopwatch"><i class="fa fa-clock-o icolor"></i></button>
                     </div>
                   </div>
                 </div>
               </div>
-              <!--music player end-->
-              <!-- timer start -->
-              <div id="swMainDiv" class="col-sm-8 stopwatch-dial" style="display:none;">
-                <div class="col-sm-12 d-flex justify-content-around sw-dial">
-                  <p id="min" class="col-sm-2 minutes">00</p><i>:</i>
-                  <p id="sec" class="col-sm-2 seconds">00</p><i>:</i>
-                  <p id="cent" class="col-sm-2 centiseconds">00</p>
-                </div>
-                <div id="swButton" class="col-sm-12 d-flex justify-content-around sw-button-position">
-                  <button type="button" id="reset" name="buttonReset" style="display:block;" class="button-reset"><i class="fa fa-refresh icolor"></i></button>
-                  <button type="button" id="stop" name="buttonPause" style="display:none;" class="button-play-pause"><i class="fa fa-pause icolor"></i></button>
-                  <button type="button" id="start" name="buttonPlay" style="display:block;" class="button-play-pause"><i class="fa fa-play icolor"></i></button>
-                  <button type="button" id="lap" name="buttonLap" style="display:block;" class="button-lap-store"><i class="fa fa-hourglass icolor"></i></button>
-                </div>
-                <div class="col-sm-12 d-flex justify-content-around dial-lap">
-                  <p id="lapCount" class="col-sm-6 lap-count">LAP&nbsp;:&nbsp;0</p>
-                </div>
-              </div>
-              <div id="lapStoreList" class="lap-list" style="display:none;">
-                <table class="table responsive-view">
-                  <thead>
-                  </thead>
-                  <tbody id="lapRow">
-            <tr><th scope="row" class="lap-text">#3</th><td class="lap-text">01:59</td><td class="lap-text">3:6</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- timer end -->
-            <!--  smartwatch body stop   -->
-              <div class="row d-flex justify-content-around">
-                <!-- <button type="button" name="buttonUp" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-up icolor"></i></button> -->
-                <button type="button" id="bottomBtnNext" name="buttonNext" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-right icolor"></i></button>
-                <button type="button" id="bottomBtnBack" name="buttonBack" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-left icolor"></i></button>
-                <!-- <button type="button" id="bottomBtnScroll" name="buttonScroll" style="display:none;" class="buttonBottom"><i class="fa fa-chevron-down icolor"></i></button> -->
             </div>
-            </div>
-            <div class="lower-shape-upper">
-              <div class="d-flex justify-content-around">
-                <button type="button" id="msgBtn" name="buttonComment" class="buttonComment"><i class="fa fa-comments-o icolor"></i></button>
-                <button type="button" id="musicBtn" name="buttonMusic" class="buttonMusic"><i class="fa fa-music icolor"></i></button>
-                <button type="button" id="swBtn" name="buttonStopwatch" class="buttonStopwatch"><i class="fa fa-clock-o icolor"></i></button>
-              </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="js/script.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+          <script src="js/script.js"></script>
 </body>
 
 </html>
