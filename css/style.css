@@ -298,9 +298,10 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   margin-left: -10px;
   margin-top: -20px;
 }
-
+.sw-dial{
+    margin-left: 7vw;
+}
 .minutes {
-  margin-left: 7vw;
   padding-top: 40px;
   color:var(--watchContentColor);
   font-size: 40px;
