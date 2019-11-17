@@ -295,11 +295,11 @@ Objective: Create a smartwatch which able to show time, check message, play musi
   margin-left: -50px;
 }
 .stopwatch-dial {
-  margin-left: -10px;
-  margin-top: -20px;
+  margin-left: 40px;
+  margin-top: 0px;
 }
 .sw-dial{
-    margin-left: 7vw;
+    margin-left:0;
 }
 .minutes {
   padding-top: 40px;
@@ -321,7 +321,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 
 .sw-button-position {
   margin-top: 10px;
-  margin-left: 2.5vw;
+  margin-left: -1vw;
 }
 
 .button-reset {
@@ -352,7 +352,7 @@ Objective: Create a smartwatch which able to show time, check message, play musi
 
 .lap-count {
   margin-top: 0px;
-  margin-left: 50px;
+  margin-left: -4vw;
   text-align: center;
   font-size: 20px;
 }
